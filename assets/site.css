@@ -348,7 +348,7 @@
   .ccard.address { grid-row: span 2; background: #531607; color: #fbf6ee; border: 0; }
   .ccard .ficon { margin-bottom: 18px; }
   .ccard small { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: #9a6f63; }
-  .ccard.address small { color: #b48cf1; }
+  .ccard.address small { color: var(--konu-yellow); }
   .ccard strong { font-size: 17px; font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
   .ccard.address strong { font-size: clamp(20px, 2vw, 26px); line-height: 1.35; }
   .ccard .go { margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
@@ -690,4 +690,25 @@
     .story-grid { grid-template-columns: 1fr; }
     .story-cups { max-width: 320px; }
     .story-btn { margin-left: 0; }
+  }
+
+  /* ================= contact: map, socials, brand tiles ================= */
+  .ccard.address .ccard-map { width: 100%; flex: 1; min-height: 190px; margin-top: 20px; border: 0; border-radius: 16px; background: #6b2a17; }
+  .ccard .go { color: inherit; text-decoration: none; }
+  div.ccard .go:hover svg { transform: translateX(4px); }
+  .phone-card { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .phone-main { display: flex; flex-direction: column; gap: 6px; }
+  .phone-main strong a { color: inherit; text-decoration: none; }
+  .socials { display: flex; flex-direction: column; gap: 10px; padding-left: 28px; border-left: 1px solid rgba(83, 22, 7, .1); }
+  .socials small { margin-bottom: 4px; }
+  .social { display: flex; align-items: center; gap: 12px; color: #531607; text-decoration: none; font-size: 12px; color: #7a4b3f; border-radius: 14px; padding: 6px; margin-left: -6px; transition: background-color .2s; }
+  .social b { display: block; font-size: 14px; font-weight: 600; color: #531607; }
+  .social:hover { background: #fbf1df; }
+  .social-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--konu-purple); color: #fff; flex: none; }
+  .social-ico svg { width: 20px; height: 20px; }
+  .social:nth-of-type(2) .social-ico { background: var(--konu-brown); }
+  .social:nth-of-type(3) .social-ico { background: var(--konu-yellow); color: var(--konu-brown); }
+  @media (max-width: 600px) {
+    .phone-card { grid-template-columns: 1fr; gap: 22px; }
+    .socials { padding-left: 0; border-left: 0; padding-top: 20px; border-top: 1px solid rgba(83, 22, 7, .1); }
   }

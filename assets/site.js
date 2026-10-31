@@ -55,6 +55,7 @@ const KO = {
   'story.s2': '가족과 친구들의 도움으로 그 꿈은 현실이 되었어요. 지금 KONU는 필리핀 전역 400곳이 넘는 매장과 캐나다 주요 슈퍼마켓 진열대에서 만나볼 수 있어요.',
   'story.s3': '첫 간식부터 계속 늘어나는 라인업까지, 모든 KONU 제품은 단 하나의 목표로 만들어져요. 한입마다 행복을 전하고, 간식의 즐거움을 계속 이어가는 것.',
   'story.shop': 'Konu 쇼핑하기',
+  'ct.follow': '팔로우하기', 'ct.mapTitle': '리잘주 타이타이에 있는 Konu 위치 지도',
   'prefs.lang': '언어', 'prefs.cur': '통화', 'cur.PHP': '필리핀 페소', 'cur.CAD': '캐나다 달러', 'cur.KRW': '대한민국 원',
   // text built in the script
   'meta': '60 g · 스푼 증정', 'each': '개당 {price} · {weight}', 'seeUp': '{name} 자세히 보기', 'addName': '{name} 장바구니에 담기',
@@ -85,6 +86,7 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => { EN[el.dataset.i18n
 document.querySelectorAll('[data-i18n-aria]').forEach(el => { EN[el.dataset.i18nAria] ??= el.getAttribute('aria-label'); });
 document.querySelectorAll('[data-i18n-ph]').forEach(el => { EN[el.dataset.i18nPh] ??= el.getAttribute('placeholder'); });
 document.querySelectorAll('[data-i18n-alt]').forEach(el => { EN[el.dataset.i18nAlt] ??= el.getAttribute('alt'); });
+document.querySelectorAll('[data-i18n-title]').forEach(el => { EN[el.dataset.i18nTitle] ??= el.getAttribute('title'); });
 
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -117,6 +119,7 @@ function translatePage() {
   document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.setAttribute('placeholder', t(el.dataset.i18nPh)); });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.setAttribute('alt', t(el.dataset.i18nAlt)); });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => { el.setAttribute('title', t(el.dataset.i18nTitle)); });
 }
 
 // colors for store chains (used on both pages)
