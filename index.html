@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Bagel+Fat+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=4">
+<link rel="stylesheet" href="assets/site.css?v=5">
 </head>
 <body>
 
@@ -805,6 +805,7 @@
     $('bestPrice').textContent = money(priceOf(CEREAL_JAR));
     renderCart();
     renderStoreTeaser();
+    if (typeof splitHeadings === 'function' && !calm.matches) splitHeadings();
   }
   function toggleMenu(open) {
     $('prefsMenu').hidden = !open;
@@ -828,9 +829,88 @@
   $('bestImg').addEventListener('error', function fallback() { this.removeEventListener('error', fallback); this.src = 'assets/cups/choco.png?v=2'; });
   if ($('bestImg').complete && !$('bestImg').naturalWidth) $('bestImg').src = 'assets/cups/choco.png?v=2';
 
+  // ================= scroll effects =================
+  // parallax, word-by-word headings, scroll-reactive band, best-seller zoom (all off for reduced motion)
+  const calm = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // headings appear word by word
+  const SPLIT_HEADINGS = '#flavors-title, #best-title, #why-title, #story-title, #stats-title, #order-title, #stores-title, #contact-title';
+  function splitWords(el) {
+    const nodes = [...el.childNodes];
+    el.textContent = '';
+    let i = 0;
+    nodes.forEach(node => {
+      if (node.nodeType !== 3) { el.appendChild(node); return; }
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { el.appendChild(document.createTextNode(part)); return; }
+        const w = document.createElement('span');
+        w.className = 'w'; w.style.setProperty('--i', i++); w.textContent = part;
+        el.appendChild(w);
+      });
+    });
+  }
+  function splitHeadings() {
+    document.querySelectorAll(SPLIT_HEADINGS).forEach(h => { h.classList.add('split'); splitWords(h); });
+  }
+  const wordWatcher = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('words-in'); wordWatcher.unobserve(e.target); }
+  }), { threshold: .5 }) : null;
+  document.querySelectorAll(SPLIT_HEADINGS).forEach(h => wordWatcher ? wordWatcher.observe(h) : h.classList.add('words-in'));
+
+  // things that move at their own speed while scrolling: [selector, axis, speed]
+  const PARALLAX = [
+    ['.story-cups img:nth-child(1)', 'y', .07], ['.story-cups img:nth-child(2)', 'y', -.05], ['.story-cups img:nth-child(3)', 'y', .11],
+    ['.cups-row img:nth-child(1)', 'y', .1], ['.cups-row img:nth-child(2)', 'y', .04], ['.cups-row img:nth-child(3)', 'y', -.04],
+    ['.cups-row img:nth-child(4)', 'y', .06], ['.cups-row img:nth-child(5)', 'y', .12],
+    ['.stats-cloud:not(.small)', 'x', .14], ['.stats-cloud.small', 'x', -.12], ['.stats-hill', 'y', .08]
+  ].flatMap(([sel, axis, speed]) => [...document.querySelectorAll(sel)].map(el => ({ el, axis, speed, section: el.closest('section') })));
+
+  const marquee = document.querySelector('.marquee-track');
+  const bestSection = $('bestseller'), bestImg = $('bestImg');
+  let lastY = scrollY, bandSpeed = 1, bandDir = 1, ticking = false;
+
+  function onScrollFrame() {
+    ticking = false;
+    if (calm.matches) return;
+    const vh = innerHeight;
+
+    PARALLAX.forEach(({ el, axis, speed, section }) => {
+      const r = section.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      const d = Math.max(-90, Math.min(90, -(r.top + r.height / 2 - vh / 2) * speed));
+      el.style.translate = axis === 'x' ? `${d}px 0` : `0 ${d}px`;
+    });
+
+    // best-seller jar grows and straightens as it comes into view
+    const br = bestSection.getBoundingClientRect();
+    if (br.top < vh && br.bottom > 0) {
+      const p = Math.max(0, Math.min(1, (vh - br.top) / (vh * .75)));
+      bestImg.style.scale = (.82 + .18 * p).toFixed(3);
+      bestImg.style.rotate = (-9 * (1 - p)).toFixed(2) + 'deg';
+    }
+
+    // purple band speeds up with scrolling and follows its direction
+    const dy = scrollY - lastY; lastY = scrollY;
+    if (dy !== 0) { bandDir = dy > 0 ? 1 : -1; bandSpeed = Math.min(6, 1 + Math.abs(dy) / 6); }
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScrollFrame); } }, { passive: true });
+  addEventListener('resize', () => requestAnimationFrame(onScrollFrame));
+
+  // ease the band back to normal speed after a scroll burst
+  (function bandLoop() {
+    const anim = marquee && marquee.getAnimations()[0];
+    if (anim && !calm.matches) {
+      bandSpeed += (1 - bandSpeed) * .06;
+      anim.playbackRate = bandDir * bandSpeed;
+    }
+    requestAnimationFrame(bandLoop);
+  })();
+
   // init
   applyTheme();
   applyPrefs(); // language, currency, prices
+  onScrollFrame();
   placeJars(1);
   flavors.forEach(f => { const i = new Image(); i.src = f.img; });
 </script>

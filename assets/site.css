@@ -712,3 +712,12 @@
     .phone-card { grid-template-columns: 1fr; gap: 22px; }
     .socials { padding-left: 0; border-left: 0; padding-top: 20px; border-top: 1px solid rgba(83, 22, 7, .1); }
   }
+
+  /* ================= scroll effects ================= */
+  .split .w { display: inline-block; opacity: 0; transform: translateY(.45em) rotate(3deg); transition: opacity .5s ease, transform .6s cubic-bezier(.3, 1.4, .5, 1); transition-delay: calc(var(--i) * 70ms); }
+  .split.words-in .w { opacity: 1; transform: none; }
+  .story-cups img, .cups-row img, .stats-cloud, .stats-hill { will-change: translate; }
+  #bestImg { transition: scale .15s linear, rotate .15s linear; }
+  @media (prefers-reduced-motion: reduce) {
+    .split .w { opacity: 1; transform: none; transition: none; }
+  }
