@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where to buy · Mini Krunch</title>
+<meta name="description" content="Find Mini Krunch by Konu at stores across the Philippines and Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Bagel+Fat+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<style>
+  body { background: #fbf1df; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="index.html">Konu</a>
+    <nav aria-label="Main">
+      <a href="index.html#flavors" data-i18n="nav.flavors">Flavors</a>
+      <a href="index.html#why" data-i18n="nav.why">Why Solo Cup</a>
+      <a href="index.html#story" data-i18n="ft.story">Our story</a>
+      <a href="stores.html" aria-current="page" data-i18n="nav.buy">Where to buy</a>
+    </nav>
+    <div class="header-right">
+        <div class="prefs">
+          <button class="lang" id="prefsBtn" aria-haspopup="true" aria-expanded="false" data-i18n-aria="aria.prefs" aria-label="Language and currency"><span id="prefsLabel">EN · ₱</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="prefs-menu" id="prefsMenu" hidden>
+            <p class="prefs-title" data-i18n="prefs.lang">Language</p>
+            <button class="prefs-opt" data-lang="en" lang="en">English</button>
+            <button class="prefs-opt" data-lang="ko" lang="ko">한국어</button>
+            <div class="prefs-sep"></div>
+            <p class="prefs-title" data-i18n="prefs.cur">Currency</p>
+            <button class="prefs-opt" data-cur="PHP"><b>₱</b><span data-i18n="cur.PHP">Philippine peso</span></button>
+            <button class="prefs-opt" data-cur="CAD"><b>C$</b><span data-i18n="cur.CAD">Canadian dollar</span></button>
+            <button class="prefs-opt" data-cur="KRW"><b>₩</b><span data-i18n="cur.KRW">South Korean won</span></button>
+          </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="section stores stores-page" id="stores" aria-labelledby="stores-title">
+  <div class="wrap">
+    <a class="back-link" href="index.html" data-i18n="stores.back">← Back to Mini Krunch</a>
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-i18n="stores.kicker">Where to buy</p>
+        <h2 id="stores-title" data-i18n="stores.title">Find Mini Krunch near you</h2>
+      </div>
+      <p id="storesLead"></p>
+    </div>
+    <div class="store-tools">
+      <div class="country-tabs" id="countryTabs">
+        <button data-country="PH" aria-pressed="true"><span data-i18n="country.PH">Philippines</span><small></small></button>
+        <button data-country="CA" aria-pressed="false"><span data-i18n="country.CA">Canada</span><small></small></button>
+      </div>
+      <label class="store-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="storeSearch" type="search" autocomplete="off" data-i18n-ph="stores.search" placeholder="Search by store, city or area" data-i18n-aria="stores.search" aria-label="Search by store, city or area"></label>
+    </div>
+    <div class="chain-chips" id="chainChips"></div>
+    <p class="store-count" id="storeCount" aria-live="polite"></p>
+    <ul class="store-grid" id="storeGrid"></ul>
+    <p class="store-empty" id="storeEmpty" hidden></p>
+    <div class="store-more-wrap"><button class="pill line" id="storeMore" data-i18n="stores.more">Show more stores</button></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="fwrap">
+      <div>
+        <a class="logo" href="index.html">Konu</a>
+        <p class="tag" data-i18n="ft.tag">Mini Krunch cereal cups, made for snacking anywhere.</p>
+        <p class="tag"><a href="mailto:talktokonu@konufoods.com">talktokonu@konufoods.com</a><br><a href="tel:+63282543561">(02) 8254-3561</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="ft.shop">Shop</h4>
+        <ul><li><a href="index.html#flavors" data-i18n="hero.all">All flavors</a></li><li><a href="index.html#why" data-i18n="ft.solo">Solo cups</a></li><li><a href="stores.html" data-i18n="nav.buy">Where to buy</a></li></ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.company">Company</h4>
+        <ul><li><a href="index.html#story" data-i18n="ft.story">Our story</a></li><li><a href="index.html#contact" data-i18n="ft.contact">Contact</a></li><li><a href="#" data-i18n="ft.faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.follow">Follow</h4>
+        <ul><li><a href="https://www.instagram.com/konu.snacks/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@konu.snacks" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.facebook.com/konufood" target="_blank" rel="noopener">Facebook</a></li></ul>
+      </div>
+    </div>
+    <div class="fbottom"><span>© 2026 Konu. All rights reserved.</span><span data-i18n="hero.eyebrow">Mini Krunch · Solo Cup</span></div>
+  </div>
+</footer>
+
+<script src="assets/stores.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/store-finder.js?v=1"></script>
+<script>
+  const $ = id => document.getElementById(id);
+
+  function applyPrefs() {
+    translatePage();
+    document.title = t('stores.pageTitle');
+    $('prefsLabel').textContent = `${lang.toUpperCase()} · ${CURRENCIES[cur].sym}`;
+    $('prefsMenu').querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+    $('prefsMenu').querySelectorAll('[data-cur]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cur === cur));
+    renderStores();
+  }
+  function toggleMenu(open) {
+    $('prefsMenu').hidden = !open;
+    $('prefsBtn').setAttribute('aria-expanded', open);
+  }
+  $('prefsBtn').onclick = e => { e.stopPropagation(); toggleMenu($('prefsMenu').hidden); };
+  $('prefsMenu').addEventListener('click', e => {
+    const b = e.target.closest('.prefs-opt'); if (!b) return;
+    if (b.dataset.lang) { lang = b.dataset.lang; store.set('miniKrunchLang', lang); }
+    if (b.dataset.cur) { cur = b.dataset.cur; store.set('miniKrunchCurrency', cur); }
+    applyPrefs();
+    toggleMenu(false);
+    $('prefsBtn').focus();
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.prefs')) toggleMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('prefsMenu').hidden) { toggleMenu(false); $('prefsBtn').focus(); } });
+
+  applyPrefs();
+</script>
+</body>
+</html>
