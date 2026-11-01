@@ -721,3 +721,10 @@
   @media (prefers-reduced-motion: reduce) {
     .split .w { opacity: 1; transform: none; transition: none; }
   }
+
+  /* ================= phones: bigger tap areas (icons stay the same size) ================= */
+  @media (max-width: 680px), (pointer: coarse) {
+    .sound-btn, .cart-btn { padding: 10px; margin: -6px; }
+    .add { padding: 11px; margin: -7px; }
+    .lang { min-height: 40px; }
+  }
