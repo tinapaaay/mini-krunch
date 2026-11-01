@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#77197e">
-<link rel="stylesheet" href="assets/site.css?v=6">
+<link rel="stylesheet" href="assets/site.css?v=7">
 </head>
 <body>
 
@@ -313,8 +313,9 @@
   </div>
   <div class="cart-foot" id="cartFoot">
     <div class="cart-row"><span data-i18n="cart.sub">Subtotal</span><strong id="cartSubtotal">$0</strong></div>
-    <p class="cart-note" data-i18n="cart.note">Every cup comes with a free spoon. Checkout sends your order to Konu by email.</p>
-    <a class="pill dark checkout" id="checkout" href="#" data-i18n="cart.checkout">Checkout</a>
+    <p class="cart-note" data-i18n="cart.note">Every cup comes with a free spoon. Pick where you'd like to order:</p>
+    <div class="shop-links" id="shopLinks"></div>
+    <a class="store-link" href="stores.html" data-i18n="cart.stores">Or find Mini Krunch in a store near you →</a>
     <button class="remove clear" id="clearCart" data-i18n="cart.clear">Clear cart</button>
   </div>
 </aside>
@@ -323,7 +324,7 @@
 <div class="toast" id="toast" role="status"><span id="toastText"></span><button id="toastView" data-i18n="cart.view">View cart</button></div>
 
 <script src="assets/stores.js"></script>
-<script src="assets/site.js?v=4"></script>
+<script src="assets/site.js?v=5"></script>
 <script>
   // Edit flavors, colors, prices and copy here.
   const flavors = [
@@ -529,11 +530,17 @@
     $('cartFoot').hidden = empty;
     $('cartSubtotal').textContent = money(subtotal());
 
-    // checkout: opens an email to Konu with the order filled in
-    const lines = Object.entries(cart).map(([k, q]) => `${q} x ${k} (${money(priceOf(byName[k]))} each) = ${money(priceOf(byName[k]) * q)}`);
-    const body = `Hi Konu!\n\nI'd like to order:\n\n${lines.join('\n')}\n\nSubtotal: ${money(subtotal())} (${CURRENCIES[cur].code})\n\nName:\nContact number:\nDelivery address:\n`;
-    $('checkout').href = 'mailto:talktokonu@konufoods.com?subject=' + encodeURIComponent('Mini Krunch order') + '&body=' + encodeURIComponent(body);
+    // checkout: buttons that open online shops in a new tab
+    $('shopLinks').innerHTML = SHOPS.map(sh =>
+      `<a class="shop-btn" href="${sh.url}" target="_blank" rel="noopener" style="--shop:${sh.color}">${t('cart.orderOn', { shop: sh.name })}</a>`).join('');
   }
+
+  // Where "Order on ..." buttons go. Swap in Konu's exact shop pages when you have them.
+  const SHOPS = [
+    { name: 'Shopee', color: '#ee4d2d', url: 'https://shopee.ph/search?keyword=konu%20mini%20krunch' },
+    { name: 'Lazada', color: '#0f146d', url: 'https://www.lazada.com.ph/catalog/?q=konu+mini+krunch' },
+    { name: 'TikTok', color: '#111111', url: 'https://www.tiktok.com/@konu.snacks' },
+  ];
 
   function setQty(name, q) {
     if (q > 0) cart[name] = Math.min(q, 99); else delete cart[name];

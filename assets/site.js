@@ -41,7 +41,8 @@ const KO = {
   'ft.solo': '솔로컵', 'ft.story': '브랜드 스토리', 'ft.contact': '연락처', 'ft.faq': '자주 묻는 질문',
   'cart.title': '장바구니', 'cart.empty': '장바구니가 비어 있어요', 'cart.emptyP': '마음에 드는 맛을 고르면 여기에 표시돼요.',
   'cart.browse': '플레이버 둘러보기', 'cart.sub': '합계',
-  'cart.note': '모든 컵에 스푼이 함께 들어 있어요. 주문하기를 누르면 주문 내용이 이메일로 Konu에 전달돼요.',
+  'cart.note': '모든 컵에 스푼이 함께 들어 있어요. 주문할 곳을 골라 주세요:',
+  'cart.orderOn': '{shop}에서 주문하기', 'cart.stores': '또는 가까운 매장에서 Mini Krunch 찾기 →',
   'cart.checkout': '주문하기', 'cart.clear': '장바구니 비우기', 'cart.view': '장바구니 보기',
   'best.badge': '베스트셀러', 'best.title': 'Choco Krunch Cereal Jar',
   'best.desc': '특별한 프리미엄 초콜릿 글레이즈와 Konu만의 바삭한 미니 초코 시리얼의 만남. 진하고 부드러운, 흔한 초콜릿과는 확실히 다른 맛이에요.',
@@ -64,6 +65,7 @@ const KO = {
 };
 // English for text built in the script (page text is read from the HTML)
 const EN = {
+  'cart.orderOn': 'Order on {shop}',
   'meta': '60 g · free spoon', 'each': '{price} each · {weight}', 'seeUp': 'See {name} up close', 'addName': 'Add {name} to cart',
   'removeOne': 'Remove one {name}', 'addOne': 'Add one {name}', 'remove': 'Remove', 'added': '{name} added to cart',
   'addedBtn': 'Added ✓', 'livePos': '{name}, {i} of {n}', 'cupAlt': '{name} solo cup',

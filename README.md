@@ -10,7 +10,7 @@ A product website for Konu's Mini Krunch solo cups and cereal jar.
 ## Features
 
 - Full-screen flavor slider (arrows, swipe or keyboard)
-- Cart with quantities, saved in the browser, and checkout by email
+- Cart with quantities, saved in the browser, with "Order on Shopee / Lazada / TikTok" buttons
 - Add-to-cart animation and sounds (with a mute button)
 - English and Korean
 - Prices in Philippine peso, Canadian dollar or South Korean won
@@ -29,6 +29,7 @@ Then open http://localhost:5174.
 
 - Flavors, prices (in pesos) and hero text: the `flavors` list in `index.html`
 - Cereal Jar price: `CEREAL_JAR` in `index.html`
+- Shop links for checkout: `SHOPS` in `index.html`
 - Exchange rates and Korean translations: `assets/site.js`
 - Store list: `assets/stores.js`
 - Styles: `assets/site.css`

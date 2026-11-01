@@ -728,3 +728,10 @@
     .add { padding: 11px; margin: -7px; }
     .lang { min-height: 40px; }
   }
+
+  /* ================= cart: order on a shop ================= */
+  .shop-links { display: grid; gap: 10px; }
+  .shop-btn { display: block; text-align: center; padding: 14px; border-radius: 999px; background: var(--shop); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform .2s, filter .2s; }
+  .shop-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+  .store-link { display: block; text-align: center; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--konu-purple); text-decoration: none; }
+  .store-link:hover { text-decoration: underline; text-underline-offset: 4px; }
