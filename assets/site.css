@@ -783,7 +783,27 @@
   .btn--icon.btn--sm svg { width: 14px; height: 14px; }
   .btn--lg { padding: 15.5px 32.5px; font-size: var(--fs-body); font-weight: 700; }
   .btn--block { display: flex; width: 100%; }
-  @media (max-width: 680px) { .btn--sm:not(.btn--icon) { padding: 11px 20px; } }
+  @media (max-width: 680px) {
+    .btn--sm:not(.btn--icon) { padding: 11px 20px; }
+    .btn--icon.btn--sm { width: 40px; height: 40px; }   /* easier to tap on phones */
+  }
+
+  /* loading: <button class="btn btn--primary btn--loading" aria-busy="true" disabled> */
+  .btn--loading { position: relative; color: transparent; pointer-events: none; }
+  .btn--loading:disabled { opacity: 1; }
+  .btn--loading::after {
+    content: ''; position: absolute; inset: 0; margin: auto; width: 16px; height: 16px;
+    border: 2px solid var(--btn-on-main); border-right-color: transparent; border-radius: var(--radius-full);
+    animation: btn-spin .7s linear infinite;
+  }
+  .btn--secondary.btn--loading::after, .btn--icon.btn--loading::after { border-color: var(--btn-main); border-right-color: transparent; }
+  @keyframes btn-spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn { transition: none; }
+    .btn:hover, .btn:active { transform: none; }
+    .btn--loading::after { animation-duration: 2s; }
+  }
 
   /* section colors */
   .card .btn:not(.btn--accent) { --btn-main: var(--ink); --btn-on-main: var(--bg); --btn-main-hover: var(--ink); }
@@ -791,4 +811,4 @@
   .cart-head .btn--icon { --btn-border: rgba(var(--brown-rgb), .2); }
   .store-more-wrap .btn--secondary:not(:hover) { background: var(--white); }
   .shop-links .btn { --btn-on-main: var(--white); --btn-main-hover: var(--btn-main); border: 0; padding: 14px; font-size: var(--fs-body); }
-  .shop-links .btn:hover { filter: brightness(1.1); }
+  .shop-links .btn:hover { filter: brightness(.9); }

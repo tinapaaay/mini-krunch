@@ -126,3 +126,9 @@ function translatePage() {
 
 // colors for store chains (used on both pages)
 const CHAIN_COLORS = { 'SM': '#9fa8e0', 'SM Hypermarket': '#b48cf1', 'Robinsons': '#a9c48a', 'Puregold': '#e6d9a6', 'Savemore': '#f3aabb', 'Lawson': '#8fd3e8', 'Canada': '#f3aabb' };
+
+// Disabled links: CSS blocks mouse clicks, this also blocks Enter (which fires a click).
+document.addEventListener('click', e => {
+  const el = e.target.closest('a[aria-disabled="true"]');
+  if (el) e.preventDefault();
+}, true);

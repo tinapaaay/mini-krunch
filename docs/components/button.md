@@ -21,7 +21,7 @@ Don't use it for text links inside paragraphs, the header icons (sound, cart, la
 
 | Class | Size | Use for |
 |---|---|---|
-| `btn--sm` | 12px text, about 42px tall (40px on phones). Icon: 36px circle. | The hero, where buttons sit beside the big product photo |
+| `btn--sm` | 12px text, about 42px tall (40px on phones). Icon: 36px circle, 40px on phones. | The hero, where buttons sit beside the big product photo |
 | *(none)* | 13px text, about 47px tall. Icon: 40px circle. | Everywhere else |
 | `btn--lg` | 15px bold text, about 53px tall | A single standout action, like the best seller |
 | `btn--block` | Full width of its container | Stacked choices in narrow spaces, like the shop buttons in the cart |
@@ -35,8 +35,9 @@ The button is plain HTML and CSS, so its "props" are classes, attributes and CSS
 | `btn--primary` / `--secondary` / `--accent` / `--icon` | class | none (bare outline) | Picks the variant. Always use exactly one. |
 | `btn--sm` / `btn--lg` | class | medium | Picks the size. |
 | `btn--block` | class | off | Stretches to full width. |
+| `btn--loading` | class | off | Hides the label and shows a spinner, keeping the button's size. Use with `disabled` and `aria-busy="true"`. |
 | `disabled` | attribute on `<button>` | off | Fades the button to 45% and blocks clicks. |
-| `aria-disabled="true"` | attribute on `<a>` | off | Same look as `disabled`, for links. See the note under Accessibility. |
+| `aria-disabled="true"` | attribute on `<a>` | off | Same look as `disabled`, for links. Mouse clicks and the Enter key are both blocked (by a small script in `assets/site.js`). |
 | `aria-label` | attribute | none | Required on `btn--icon`, since it has no visible text. |
 | `--btn-main` | CSS variable (color) | `var(--konu-brown)` | Fill color (primary, icon hover) or outline and text color (secondary). |
 | `--btn-on-main` | CSS variable (color) | `var(--cream)` | Text color on a filled button. |
@@ -62,19 +63,23 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
 | State | Visual | Behavior |
 |---|---|---|
 | Default | As described per variant | — |
-| Hover | Lifts 2px. Primary turns purple, secondary and icon fill in, accent turns white. Colors fade in over 0.3s. | Mouse only |
+| Hover | Lifts 2px. Primary turns purple, secondary and icon fill in, accent turns white. Colors fade in over 0.3s. Shop buttons darken slightly. | Mouse only |
 | Active (pressed) | Drops back down and shrinks to 97% | While the mouse or finger is held down |
 | Focus | 2px outline in the text color, 4px away from the button | Shown when reached by keyboard (`:focus-visible`), not on mouse click |
 | Disabled | 45% opacity, no lift, "not allowed" cursor | Can't be clicked or tapped |
-| Loading | Not supported yet | — |
+| Loading | Label hidden, spinner in the label color, same size as before | Can't be clicked; screen readers hear it as busy |
+| Reduced motion | No lift, no press shrink, no color fade; spinner turns slowly | When the visitor has "reduce motion" turned on |
 
 ## Accessibility
 
 - **Role:** a `<button>` is announced as "button"; an `<a href>` as "link". Pick the element by what it does, not how it looks: actions on this page are `<button>`, going somewhere is `<a>`.
 - **Keyboard:** Tab moves to the button and shows the focus outline. Enter activates both buttons and links. Space activates `<button>` only.
 - **Screen reader:** reads the visible text, or the `aria-label` on icon buttons. In Korean, labels switch through `data-i18n` (text) and `data-i18n-aria` (icon labels).
-- **Contrast:** every variant passes 4.5:1 on its own background: primary 13.1:1, primary hover 8.8:1, secondary on cream 13.1:1, accent 8.8:1, white outline on the purple band 9.4:1.
-- **Tap size:** text buttons are 40px or taller; icon buttons 36–40px.
+- **Contrast:** every variant passes 4.5:1 on its own background: primary 13.1:1, primary hover 8.8:1, secondary on cream 13.1:1, accent 8.8:1, white outline on the purple band 9.4:1. Shop buttons: Shopee (`#d23c1e`, a slightly deeper Shopee orange) 4.8:1, Lazada 15.7:1, TikTok 18.9:1.
+- **Tap size:** every button is at least 40px tall on phones.
+- **Motion:** respects the "reduce motion" setting.
+- **Disabled links:** `aria-disabled="true"` blocks both clicks and the Enter key.
+- **Loading:** pair `btn--loading` with `disabled` and `aria-busy="true"` so screen readers know to wait.
 
 ## Do's and Don'ts
 
@@ -104,18 +109,21 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
 </button>
 
 <!-- full width, custom brand color -->
-<a class="btn btn--primary btn--block" href="https://shopee.ph/..." target="_blank" rel="noopener" style="--btn-main: #ee4d2d">Order on Shopee</a>
+<a class="btn btn--primary btn--block" href="https://shopee.ph/..." target="_blank" rel="noopener" style="--btn-main: #d23c1e">Order on Shopee</a>
 
 <!-- disabled -->
 <button class="btn btn--primary" disabled>Sold out</button>
+<a class="btn btn--secondary" href="stores.html" aria-disabled="true">Find a store</a>
+
+<!-- loading -->
+<button class="btn btn--primary btn--loading" disabled aria-busy="true">Add to cart</button>
 ```
 
-## Known gaps
+## Change log
 
-| Gap | Impact | Suggested fix |
-|---|---|---|
-| The Shopee button (white on Shopee orange `#ee4d2d`) is 3.7:1 | Below the 4.5:1 minimum for 15px text | Use a darker orange like `#c73a1e`, or dark text on the orange |
-| Hover lift and press shrink ignore "reduce motion" | Small movement for people who turned motion off | Add `.btn { transition: none; } .btn:hover, .btn:active { transform: none; }` inside the existing `prefers-reduced-motion` block |
-| `aria-disabled="true"` on a link blocks mouse clicks but not the keyboard | Enter still follows the link | Also add `tabindex="-1"`, or remove the `href` while disabled |
-| No loading state | Not needed today; would matter if an action ever waits on a server | Add `btn--loading` with a spinner and `aria-busy="true"` |
-| Icon buttons in the hero are 36px | Below the 44px touch guideline (above the 24px minimum) | Use the default 40px icon size on phones |
+- **Nov 2026:** fixed every known gap from the first version of this doc:
+  - Shopee orange deepened to pass contrast, and shop buttons darken instead of brighten on hover;
+  - reduce-motion support;
+  - the Enter key is blocked on disabled links;
+  - new `btn--loading` state;
+  - 40px hero arrows on phones.
