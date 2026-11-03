@@ -22,6 +22,7 @@
   .concept-note ~ main .card { height: calc(100vh - 26px); height: calc(100svh - 26px); min-height: 534px; }
   .concept-note { position: fixed; top: 0; left: 0; right: 0; z-index: 10; }
   .concept-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  @media (max-width: 680px) { .concept-note { height: auto; padding: 5px 16px; line-height: 1.4; white-space: normal; } }
 
   :root { --konu-purple: #77197e; --konu-yellow: #f6c55e; --konu-brown: #531607; --white: #fff; --navy: #1f2456; --white-rgb: 255, 255, 255; }
   * { box-sizing: border-box; }

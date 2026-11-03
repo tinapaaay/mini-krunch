@@ -20,7 +20,7 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#77197e">
-<link rel="stylesheet" href="assets/site.css?v=10">
+<link rel="stylesheet" href="assets/site.css?v=13">
 </head>
 <body>
 <p class="concept-note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
@@ -210,6 +210,7 @@
 </section>
 
 <section class="section order" id="order" aria-labelledby="order-title">
+<span id="stores"></span>
   <div class="wrap">
     <div class="cups-row reveal" id="cupsRow" aria-hidden="true"></div>
     <div class="reveal">
@@ -219,20 +220,10 @@
         <a class="btn btn--accent" href="#flavors" data-i18n="ord.shop">Shop flavors</a>
         <a class="btn btn--secondary" href="stores.html" data-i18n="ord.buy">Find a store</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section stores-teaser" id="stores" aria-labelledby="stores-title">
-  <div class="wrap teaser-grid reveal">
-    <div>
-      <p class="kicker" data-i18n="stores.kicker">Where to buy</p>
-      <h2 id="stores-title" data-i18n="stores.title">Find Mini Krunch near you</h2>
-      <p id="storesLead"></p>
-    </div>
-    <div class="teaser-side">
-      <ul class="teaser-chains" id="teaserChains"></ul>
-      <a class="btn btn--primary" href="stores.html" data-i18n="ord.buy">Find a store</a>
+      <div class="order-stores">
+        <p id="storesLead"></p>
+        <ul class="teaser-chains" id="teaserChains"></ul>
+      </div>
     </div>
   </div>
 </section>
@@ -300,7 +291,7 @@
       </div>
       <div>
         <h4 data-i18n="ft.company">Company</h4>
-        <ul><li><a href="#story" data-i18n="ft.story">Our story</a></li><li><a href="#contact" data-i18n="ft.contact">Contact</a></li><li><a href="#" data-i18n="ft.faq">FAQ</a></li></ul>
+        <ul><li><a href="#story" data-i18n="ft.story">Our story</a></li><li><a href="#contact" data-i18n="ft.contact">Contact</a></li></ul>
       </div>
       <div>
         <h4 data-i18n="ft.follow">Follow</h4>
@@ -326,7 +317,7 @@
   </div>
   <div class="cart-foot" id="cartFoot">
     <div class="cart-row"><span data-i18n="cart.sub">Subtotal</span><strong id="cartSubtotal">$0</strong></div>
-    <p class="cart-note" data-i18n="cart.note">Every cup comes with a free spoon. Pick where you'd like to order:</p>
+    <p class="cart-note" data-i18n="cart.note">Your picks are saved here as a list. Find them on your favorite shop:</p>
     <div class="shop-links" id="shopLinks"></div>
     <a class="store-link" href="stores.html" data-i18n="cart.stores">Or find Mini Krunch in a store near you →</a>
     <button class="remove clear" id="clearCart" data-i18n="cart.clear">Clear cart</button>
@@ -337,7 +328,7 @@
 <div class="toast" id="toast" role="status"><span id="toastText"></span><button id="toastView" data-i18n="cart.view">View cart</button></div>
 
 <script src="assets/stores.js"></script>
-<script src="assets/site.js?v=5"></script>
+<script src="assets/site.js?v=7"></script>
 <script>
   // Edit flavors, colors, prices and copy here.
   const flavors = [
@@ -346,7 +337,7 @@
       img: 'assets/cups/cookies.webp',
       pricePHP: 175,
       title: 'Crunch for your cravings',
-      desc: 'Bite-size cereal crunch with cookies-and-cream flavour, in a cup made for one. Spoon included — snack it anywhere.',
+      desc: 'Bite-size cereal crunch with cookies-and-cream flavor, in a cup made for one. Spoon included — snack it anywhere.',
       bg: '#9fa8e0', ink: '#1f2456', muted: 'rgba(31,36,86,.82)'
     },
     {
@@ -378,7 +369,7 @@
       img: 'assets/cups/pistachio.webp',
       pricePHP: 175,
       title: 'The pistachio craze, in a cup',
-      desc: 'Nutty pistachio with a knafeh-inspired crunch. The flavour everyone is talking about, ready to spoon.',
+      desc: 'Nutty pistachio with a knafeh-inspired crunch. The flavor everyone is talking about, ready to spoon.',
       bg: '#e6d9a6', ink: '#3b3218', muted: 'rgba(59,50,24,.78)'
     }
   ];
@@ -858,7 +849,7 @@
   const calm = matchMedia('(prefers-reduced-motion: reduce)');
 
   // headings appear word by word
-  const SPLIT_HEADINGS = '#flavors-title, #best-title, #why-title, #story-title, #stats-title, #order-title, #stores-title, #contact-title';
+  const SPLIT_HEADINGS = '#flavors-title, #best-title, #why-title, #story-title, #stats-title, #order-title, #contact-title';
   function splitWords(el) {
     const nodes = [...el.childNodes];
     el.textContent = '';

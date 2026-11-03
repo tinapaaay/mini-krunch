@@ -27,6 +27,20 @@ All site colors are defined once, in the `design tokens` block at the top of `as
 
 The hero's `--bg`, `--ink` and `--muted` change per flavor; set them in the `flavors` list in `index.html`, not in CSS. Product data colors (flavor backgrounds, store chain chips, contact icon tiles) stay with their data. `404.html` has a small copy of the brand tokens because it does not load `site.css`.
 
+## Sizes, corners, shadows, motion and breakpoints
+
+These also live in the `design tokens` block at the top of `assets/site.css`. Pick the nearest step instead of typing a new value:
+
+| Scale | Tokens |
+|---|---|
+| Font size (8) | `--fs-label` 12px · `--fs-sm` 13px · `--fs-body` 15px · `--fs-lg` 17px · `--fs-xl` 22px · `--fs-2xl` 22–28px · `--fs-display` 32–56px · `--fs-hero` 40–72px |
+| Corner radius (4) | `--radius-sm` 10px · `--radius-md` 16px · `--radius-lg` 24px · `--radius-full` (pills and circles) |
+| Shadow (3) | `--shadow-sm` sticky bars · `--shadow-md` floating buttons and toast · `--shadow-lg` hovered cards, menus, cart drawer |
+| Easing (2) | `--ease` slides and color fades · `--ease-bounce` playful pops |
+| Breakpoints (3) | phone `max-width: 680px` · tablet `max-width: 900px` · laptop `max-width: 1100px` (CSS can't use variables in `@media`, so use these exact numbers) |
+
+Two shapes stay at `border-radius: 50%` on purpose because they are ovals, not rounded corners: the shadow under the hero cup and the hill in the stats section. The small rings around timeline and stat dots are outlines, not elevation, so they aren't on the shadow scale.
+
 ## Buttons
 
 Every button and button-styled link uses one component, `.btn`, defined at the end of `assets/site.css`. Combine the base class with one variant and, optionally, a size:

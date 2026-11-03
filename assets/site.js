@@ -41,7 +41,7 @@ const KO = {
   'ft.solo': '솔로컵', 'ft.story': '브랜드 스토리', 'ft.contact': '연락처', 'ft.faq': '자주 묻는 질문',
   'cart.title': '장바구니', 'cart.empty': '장바구니가 비어 있어요', 'cart.emptyP': '마음에 드는 맛을 고르면 여기에 표시돼요.',
   'cart.browse': '플레이버 둘러보기', 'cart.sub': '합계',
-  'cart.note': '모든 컵에 스푼이 함께 들어 있어요. 주문할 곳을 골라 주세요:',
+  'cart.note': '고른 상품을 목록으로 저장해 뒀어요. 원하는 쇼핑몰에서 찾아보세요:',
   'cart.orderOn': '{shop}에서 주문하기', 'cart.stores': '또는 가까운 매장에서 Mini Krunch 찾기 →',
   'cart.checkout': '주문하기', 'cart.clear': '장바구니 비우기', 'cart.view': '장바구니 보기',
   'best.badge': '베스트셀러', 'best.title': 'Choco Krunch Cereal Jar',
@@ -69,7 +69,7 @@ const EN = {
   'meta': '60 g · free spoon', 'each': '{price} each · {weight}', 'seeUp': 'See {name} up close', 'addName': 'Add {name} to cart',
   'removeOne': 'Remove one {name}', 'addOne': 'Add one {name}', 'remove': 'Remove', 'added': '{name} added to cart',
   'addedBtn': 'Added ✓', 'livePos': '{name}, {i} of {n}', 'cupAlt': '{name} solo cup',
-  'stores.lead': 'Grab a cup at {n} stores across the Philippines and Canada.', 'stores.count': 'Showing {shown} of {total} stores',
+  'stores.lead': 'Find us at {n} stores across the Philippines and Canada.', 'stores.count': 'Showing {shown} of {total} stores',
   'stores.none': 'No stores match “{q}”. Try another city or area.', 'stores.dir': 'Get directions', 'stores.map': 'View on map',
   'stores.all': 'All', 'stores.noPhone': 'No phone listed', 'stores.pageTitle': 'Where to buy · Mini Krunch',
   'country.PH': 'Philippines', 'country.CA': 'Canada'
