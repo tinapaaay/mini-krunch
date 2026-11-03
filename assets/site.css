@@ -115,8 +115,6 @@
     font-weight: 500;
   }
   .logo {
-    font-family: Fraunces, serif;
-    font-weight: 800;
     font-size: var(--fs-xl);
     letter-spacing: .02em;
     color: var(--ink);
@@ -405,7 +403,7 @@
   .fbottom { border-top: 1px solid rgba(var(--white-rgb), .12); margin-top: 56px; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: var(--fs-label); color: var(--lilac-300); }
 
   /* fade-up on scroll */
-  .reveal:not(.in) { opacity: 0; }
+  .js .reveal:not(.in) { opacity: 0; }   /* only hide when the script is running to reveal it */
   .reveal.in { animation: rise .8s var(--ease) backwards; }
   @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
 
@@ -555,7 +553,7 @@
   .best-img::before { content: ''; position: absolute; width: 78%; aspect-ratio: 1; border-radius: var(--radius-full); background: radial-gradient(circle, #f3e6ff 0%, var(--white) 70%); }
   .best-img img { position: relative; width: 100%; max-width: 480px; height: auto; filter: drop-shadow(0 30px 30px rgba(60, 20, 10, .22)); animation: bob 6s ease-in-out infinite; }
   .badge { display: inline-block; background: var(--konu-purple); color: var(--white); border-radius: var(--radius-full); padding: 9px 20px; font-size: var(--fs-sm); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-  .best h2 { font-family: Fraunces, 'Noto Sans KR', serif; font-weight: 800; color: var(--konu-brown); font-size: var(--fs-display); line-height: 1.12; letter-spacing: -.01em; margin: 22px 0; }
+  .best h2 { color: var(--konu-brown); font-size: var(--fs-display); line-height: 1.12; letter-spacing: -.01em; margin: 22px 0; }
   .best p { font-size: var(--fs-lg); line-height: 1.8; color: #6e2d1c; max-width: 520px; margin: 0 0 32px; }
   .best-buy { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
   .best-price { font-size: var(--fs-body); color: var(--text-soft); }

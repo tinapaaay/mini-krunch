@@ -186,7 +186,7 @@ With **reduce motion** turned on, there's no word animation, parallax, button li
 2. A soft pop and chime play; the sound can be muted from the header.
 3. The cart count bounces and the toast appears.
 
-**Scroll reveals.** Sections fade up once as they enter the screen; big headings appear word by word. Each section animates only the first time.
+**Scroll reveals.** Sections fade up once as they enter the screen; big headings appear word by word. Each section animates only the first time. A tiny script in each page's `<head>` adds a `js` class to `<html>`, and sections are only hidden while that class is there, so if scripts fail to load, everything is still visible.
 
 **Two languages, three currencies.** English text lives in the HTML; Korean in `assets/site.js`. Mark translatable text with `data-i18n` (text), `data-i18n-html`, `data-i18n-aria` (labels), `data-i18n-ph` (placeholders) or `data-i18n-alt` (image descriptions). Prices are stored in pesos and converted on screen.
 
@@ -219,9 +219,7 @@ With **reduce motion** turned on, there's no word animation, parallax, button li
 
 | Item | Note |
 |---|---|
-| Fraunces font | Still loaded and named in two rules, but always overridden by Bagel Fat One, so it never shows. Safe to remove from the font link to save a download. |
 | Four one-off colors | Two brown text shades (best seller and stats intros), the map placeholder, and the glow behind the jar. Merging them into tokens would slightly change the look. |
 | Image drop shadows | Several slightly different `drop-shadow()` values on product photos; not on the elevation scale yet. |
 | Spacing | No spacing tokens yet; paddings and gaps are set per component. |
-| Scroll reveals without JavaScript | `.reveal` sections start invisible and the script fades them in. If the script fails to load, those sections stay hidden. Fix: only hide them once the script has started (e.g. a `js` class on `<html>`). |
 | Store numbers | Copy says "over 400 stores" and "12k locations"; the finder lists 258. Needs confirmed numbers. |
