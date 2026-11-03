@@ -20,7 +20,7 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#77197e">
-<link rel="stylesheet" href="assets/site.css?v=9">
+<link rel="stylesheet" href="assets/site.css?v=10">
 </head>
 <body>
 <p class="concept-note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
@@ -73,8 +73,8 @@
       <h1 id="title">Crunch for your cravings</h1>
       <p class="desc" id="desc"></p>
       <div class="actions">
-        <button class="btn solid" id="shopBtn" data-i18n="hero.add">Add to cart</button>
-        <a class="btn" href="#flavors" data-i18n="hero.all">All flavors</a>
+        <button class="btn btn--primary btn--sm" id="shopBtn" data-i18n="hero.add">Add to cart</button>
+        <a class="btn btn--secondary btn--sm" href="#flavors" data-i18n="hero.all">All flavors</a>
       </div>
     </div>
 
@@ -92,10 +92,10 @@
 
     <div class="controls">
       <span class="counter"><b id="current">01</b> / <span id="total">04</span></span>
-      <button class="arrow" id="prev" aria-label="Previous flavor" data-i18n-aria="aria.prev">
+      <button class="btn btn--icon btn--sm" id="prev" aria-label="Previous flavor" data-i18n-aria="aria.prev">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 6-6 6 6 6"/></svg>
       </button>
-      <button class="arrow" id="next" aria-label="Next flavor" data-i18n-aria="aria.next">
+      <button class="btn btn--icon btn--sm" id="next" aria-label="Next flavor" data-i18n-aria="aria.next">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
       </button>
     </div>
@@ -129,7 +129,7 @@
       <h2 id="best-title" data-i18n="best.title">Choco Krunch Cereal Jar</h2>
       <p data-i18n="best.desc">A unique premium chocolate glaze paired with our signature krunchy mini choco cereals — rich, smooth, and definitely not your typical cheap chocolate.</p>
       <div class="best-buy">
-        <button class="soon" id="bestAdd" data-i18n="hero.add">Add to cart</button>
+        <button class="btn btn--primary btn--lg" id="bestAdd" data-i18n="hero.add">Add to cart</button>
         <span class="best-price"><b id="bestPrice"></b> · 160 g</span>
       </div>
     </div>
@@ -183,7 +183,7 @@
         <li class="tl"><span class="tl-tag" data-i18n="story.t2">Today</span><p data-i18n="story.s2">With the help of family and friends, we turned that dream into reality — and today, KONU is proudly found in over 400 stores across the Philippines and on shelves in major supermarkets in Canada.</p></li>
         <li class="tl"><span class="tl-tag" data-i18n="story.t3">Every bite</span><p data-i18n="story.s3">From our first snack to our ever-growing lineup, every KONU product is made with one mission in mind: to bring happiness in every bite and keep the joy of snacking alive.</p></li>
       </ol>
-      <a class="pill story-btn" href="#flavors" data-i18n="story.shop">Shop Konu</a>
+      <a class="btn btn--accent story-btn" href="#flavors" data-i18n="story.shop">Shop Konu</a>
     </div>
   </div>
 </section>
@@ -216,8 +216,8 @@
       <h2 id="order-title" data-i18n-html="ord.title">Grab a cup.<br>Or all five.</h2>
       <p data-i18n="ord.lead">Mini Krunch solo cups are ready to snack. Order online or find us at your favorite store.</p>
       <div class="buttons">
-        <a class="pill dark" href="#flavors" data-i18n="ord.shop">Shop flavors</a>
-        <a class="pill line" href="stores.html" data-i18n="ord.buy">Find a store</a>
+        <a class="btn btn--accent" href="#flavors" data-i18n="ord.shop">Shop flavors</a>
+        <a class="btn btn--secondary" href="stores.html" data-i18n="ord.buy">Find a store</a>
       </div>
     </div>
   </div>
@@ -232,7 +232,7 @@
     </div>
     <div class="teaser-side">
       <ul class="teaser-chains" id="teaserChains"></ul>
-      <a class="pill dark" href="stores.html" data-i18n="ord.buy">Find a store</a>
+      <a class="btn btn--primary" href="stores.html" data-i18n="ord.buy">Find a store</a>
     </div>
   </div>
 </section>
@@ -315,14 +315,14 @@
 <aside class="cart" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title">
   <div class="cart-head">
     <h2 id="cart-title"><span data-i18n="cart.title">Your cart</span><span id="cartItemsLabel"></span></h2>
-    <button class="icon-btn" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="btn btn--icon" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
   <ul class="cart-items" id="cartItems"></ul>
   <div class="cart-empty" id="cartEmpty">
     <img src="assets/cups/cookies.webp" alt="">
     <h3 data-i18n="cart.empty">Your cart is empty</h3>
     <p data-i18n="cart.emptyP">Pick a flavor and it will show up here.</p>
-    <a class="pill dark" href="#flavors" id="browseFlavors" data-i18n="cart.browse">Browse flavors</a>
+    <a class="btn btn--primary" href="#flavors" id="browseFlavors" data-i18n="cart.browse">Browse flavors</a>
   </div>
   <div class="cart-foot" id="cartFoot">
     <div class="cart-row"><span data-i18n="cart.sub">Subtotal</span><strong id="cartSubtotal">$0</strong></div>
@@ -545,7 +545,7 @@
 
     // checkout: buttons that open online shops in a new tab
     $('shopLinks').innerHTML = SHOPS.map(sh =>
-      `<a class="shop-btn" href="${sh.url}" target="_blank" rel="noopener" style="--shop:${sh.color}">${t('cart.orderOn', { shop: sh.name })}</a>`).join('');
+      `<a class="btn btn--primary btn--block" href="${sh.url}" target="_blank" rel="noopener" style="--btn-main:${sh.color}">${t('cart.orderOn', { shop: sh.name })}</a>`).join('');
   }
 
   // Where "Order on ..." buttons go. Swap in Konu's exact shop pages when you have them.

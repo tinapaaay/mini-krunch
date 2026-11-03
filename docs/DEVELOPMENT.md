@@ -27,6 +27,23 @@ All site colors are defined once, in the `design tokens` block at the top of `as
 
 The hero's `--bg`, `--ink` and `--muted` change per flavor; set them in the `flavors` list in `index.html`, not in CSS. Product data colors (flavor backgrounds, store chain chips, contact icon tiles) stay with their data. `404.html` has a small copy of the brand tokens because it does not load `site.css`.
 
+## Buttons
+
+Every button and button-styled link uses one component, `.btn`, defined at the end of `assets/site.css`. Combine the base class with one variant and, optionally, a size:
+
+| Class | Looks like | Used for |
+|---|---|---|
+| `btn btn--primary` | Filled brown, turns purple on hover | Main action in a section (Find a store, Browse flavors, best-seller Add to cart) |
+| `btn btn--secondary` | Outline, fills on hover | Second action next to a primary (All flavors, Show more stores) |
+| `btn btn--accent` | Yellow, turns white on hover | Actions on dark backgrounds (Shop Konu, Shop flavors) |
+| `btn btn--icon` | Round, icon only; needs an `aria-label` | Slider arrows, close cart |
+| `btn--sm` / `btn--lg` | Smaller (hero) / larger (best seller) | Size modifiers |
+| `btn--block` | Full width | Shop buttons in the cart |
+
+All buttons lift on hover, press down slightly when clicked, and fade out when `disabled` (or `aria-disabled="true"` on a link).
+
+To recolor buttons in a section, set these variables on the buttons instead of writing new button styles: `--btn-main` (fill/outline color), `--btn-on-main` (text on a filled button) and `--btn-main-hover`. For example, the hero uses the current flavor's colors and the purple order band uses white outlines. The shop buttons set `--btn-main` to each shop's brand color.
+
 ## Source map
 
 - [`404.html`](../404.html)
