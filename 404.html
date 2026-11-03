@@ -17,6 +17,12 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <meta name="theme-color" content="#77197e">
 <style>
+  /* ---------- unofficial concept note ---------- */
+  .concept-note { margin: 0; height: 26px; padding: 0 16px; background: #1f2456; color: #fff; font: 500 12px/26px Montserrat, system-ui, sans-serif; letter-spacing: .02em; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .concept-note ~ main .card { height: calc(100vh - 26px); height: calc(100svh - 26px); min-height: 534px; }
+  .concept-note { position: fixed; top: 0; left: 0; right: 0; z-index: 10; }
+  .concept-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
   :root { --purple: #77197e; --yellow: #f6c55e; --brown: #531607; }
   * { box-sizing: border-box; }
   html, body { margin: 0; min-height: 100%; }
@@ -43,6 +49,7 @@
 </style>
 </head>
 <body>
+<p class="concept-note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
 <a class="logo" href="index.html">Konu</a>
 <main class="box">
   <img class="cup" src="assets/cups/choco.webp" alt="">
