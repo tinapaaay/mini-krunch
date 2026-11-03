@@ -33,7 +33,7 @@ Then open http://localhost:5174.
 - Shop links for checkout: `SHOPS` in `index.html`
 - Exchange rates and Korean translations: `assets/site.js`
 - Store list: `assets/stores.js`
-- Styles: `assets/site.css` (all colors are tokens at the top; see `docs/DEVELOPMENT.md`)
+- Styles: `assets/site.css` (all colors, sizes and shadows are tokens at the top; see `DESIGN.md`)
 
 ## Images
 
@@ -41,6 +41,10 @@ Product photos are WebP files in `assets/` (about 90% smaller than PNG). To add 
 
 `assets/og-image.jpg` is the picture shown when the link is shared on Messenger, Facebook or iMessage. Once the site is live, change the `og:image` tags in `index.html` and `stores.html` to the full address (like `https://<your-site>/assets/og-image.jpg`), since some apps need that.
 
+
+## Design system
+
+See [DESIGN.md](DESIGN.md) for colors, type, components and the rules for keeping the look consistent.
 
 ## Development guide
 
