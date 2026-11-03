@@ -43,7 +43,7 @@ Two shapes stay at `border-radius: 50%` on purpose because they are ovals, not r
 
 ## Buttons
 
-Every button and button-styled link uses one component, `.btn`, defined at the end of `assets/site.css`. Combine the base class with one variant and, optionally, a size:
+Every button and button-styled link uses one component, `.btn`, defined at the end of `assets/site.css`. Full documentation (variants, states, accessibility, do's and don'ts, known gaps): [components/button.md](components/button.md). Combine the base class with one variant and, optionally, a size:
 
 | Class | Looks like | Used for |
 |---|---|---|
