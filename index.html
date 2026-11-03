@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mini Krunch by Konu</title>
+<meta name="description" content="Bite-size cereal crunch in a solo cup with a free spoon. Five flavors: Cookies & Cream, Strawberry, Matcha, Choco and Pistachio Knafeh.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mini Krunch by Konu">
+<meta property="og:title" content="Mini Krunch by Konu">
+<meta property="og:description" content="Bite-size cereal crunch in a solo cup with a free spoon. Five flavors: Cookies & Cream, Strawberry, Matcha, Choco and Pistachio Knafeh.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Bagel+Fat+One&display=swap" rel="stylesheet">
@@ -15,6 +24,7 @@
 </head>
 <body>
 
+<main id="main">
 <section class="card" id="card" aria-roledescription="carousel" aria-label="Mini Krunch flavors">
 
   <div class="stage" id="stage" aria-hidden="true">
@@ -111,7 +121,7 @@
 <section class="section best" id="bestseller" aria-labelledby="best-title">
   <div class="wrap best-grid">
     <div class="best-img reveal">
-      <img id="bestImg" src="assets/bestseller.png?v=2" alt="Choco Krunch Cereal Jar filled with chocolate-glazed mini cereal" data-i18n-alt="best.alt">
+      <img id="bestImg" src="assets/bestseller.webp" alt="Choco Krunch Cereal Jar filled with chocolate-glazed mini cereal" data-i18n-alt="best.alt">
     </div>
     <div class="reveal">
       <span class="badge" data-i18n="best.badge">Best seller</span>
@@ -161,9 +171,9 @@
       <h2 id="story-title" data-i18n-html="story.title">It all started with a simple dream to make snacking exciting again.</h2>
       <p class="story-intro" data-i18n="story.intro">Learn how a simple idea, a lot of taste-testing, and a little chaos turned into your new favorite snack.</p>
       <div class="story-cups" aria-hidden="true">
-        <img src="assets/cups/strawberry.png?v=2" alt="" loading="lazy">
-        <img src="assets/cups/choco.png?v=2" alt="" loading="lazy">
-        <img src="assets/cups/matcha.png?v=2" alt="" loading="lazy">
+        <img src="assets/cups/strawberry.webp" alt="" loading="lazy">
+        <img src="assets/cups/choco.webp" alt="" loading="lazy">
+        <img src="assets/cups/matcha.webp" alt="" loading="lazy">
       </div>
     </div>
     <div class="reveal">
@@ -273,6 +283,8 @@
   </div>
 </section>
 
+</main>
+
 <footer class="footer">
   <div class="wrap">
     <div class="fwrap">
@@ -306,7 +318,7 @@
   </div>
   <ul class="cart-items" id="cartItems"></ul>
   <div class="cart-empty" id="cartEmpty">
-    <img src="assets/cups/cookies.png?v=2" alt="">
+    <img src="assets/cups/cookies.webp" alt="">
     <h3 data-i18n="cart.empty">Your cart is empty</h3>
     <p data-i18n="cart.emptyP">Pick a flavor and it will show up here.</p>
     <a class="pill dark" href="#flavors" id="browseFlavors" data-i18n="cart.browse">Browse flavors</a>
@@ -330,7 +342,7 @@
   const flavors = [
     {
       name: 'Cookies & Cream',
-      img: 'assets/cups/cookies.png?v=2',
+      img: 'assets/cups/cookies.webp',
       pricePHP: 175,
       title: 'Crunch for your cravings',
       desc: 'Bite-size cereal crunch with cookies-and-cream flavour, in a cup made for one. Spoon included — snack it anywhere.',
@@ -338,7 +350,7 @@
     },
     {
       name: 'Strawberry Krunch',
-      img: 'assets/cups/strawberry.png?v=2',
+      img: 'assets/cups/strawberry.webp',
       pricePHP: 175,
       title: 'Pretty in pink, loud in crunch',
       desc: 'Sweet strawberry mini crunch in a solo cup. Pop the lid, grab the free spoon, and you are good to go.',
@@ -346,7 +358,7 @@
     },
     {
       name: 'Matcha Crunch',
-      img: 'assets/cups/matcha.png?v=2',
+      img: 'assets/cups/matcha.webp',
       pricePHP: 175,
       title: 'Green tea, but make it crunchy',
       desc: 'Earthy matcha meets mini cereal crunch. Sweet, a little bit fancy, and sized for one.',
@@ -354,7 +366,7 @@
     },
     {
       name: 'Choco Crunch',
-      img: 'assets/cups/choco.png?v=2',
+      img: 'assets/cups/choco.webp',
       pricePHP: 175,
       title: 'Chocolate in every crunch',
       desc: 'Rich chocolate mini crunch for midnight snacks and no-sharing moments. One cup, one spoon, all yours.',
@@ -362,7 +374,7 @@
     },
     {
       name: 'Pistachio Knafeh',
-      img: 'assets/cups/pistachio.png?v=2',
+      img: 'assets/cups/pistachio.webp',
       pricePHP: 175,
       title: 'The pistachio craze, in a cup',
       desc: 'Nutty pistachio with a knafeh-inspired crunch. The flavour everyone is talking about, ready to spoon.',
@@ -476,7 +488,7 @@
   // other products that can go in the cart (prices in pesos are placeholders)
   const CEREAL_JAR = {
     name: 'Choco Krunch Cereal Jar', pricePHP: 349, weight: '160 g', bg: '#77197e', ink: '#ffffff',
-    get img() { const el = document.getElementById('bestImg'); return (el && el.currentSrc) || 'assets/cups/choco.png?v=2'; }
+    get img() { const el = document.getElementById('bestImg'); return (el && el.currentSrc) || 'assets/cups/choco.webp'; }
   };
   const byName = Object.fromEntries([...flavors, CEREAL_JAR].map(f => [f.name, f]));
   Object.keys(cart).forEach(k => { if (!byName[k] || !(cart[k] > 0)) delete cart[k]; });
@@ -836,9 +848,9 @@
 
   $('bestAdd').onclick = e => addToCart(CEREAL_JAR, $('bestImg'), e.currentTarget);
 
-  // best seller photo: falls back to the choco cup until assets/bestseller.png is added
-  $('bestImg').addEventListener('error', function fallback() { this.removeEventListener('error', fallback); this.src = 'assets/cups/choco.png?v=2'; });
-  if ($('bestImg').complete && !$('bestImg').naturalWidth) $('bestImg').src = 'assets/cups/choco.png?v=2';
+  // best seller photo: falls back to the choco cup if assets/bestseller.webp is missing
+  $('bestImg').addEventListener('error', function fallback() { this.removeEventListener('error', fallback); this.src = 'assets/cups/choco.webp'; });
+  if ($('bestImg').complete && !$('bestImg').naturalWidth) $('bestImg').src = 'assets/cups/choco.webp';
 
   // ================= scroll effects =================
   // parallax, word-by-word headings, scroll-reactive band, best-seller zoom (all off for reduced motion)

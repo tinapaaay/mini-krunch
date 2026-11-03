@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- This page can show up at any address, so point links back to the site's top folder
+     (on GitHub Pages that's /<repo-name>/, everywhere else it's /). -->
+<script>
+  document.write('<base href="' + (location.hostname.endsWith('github.io') ? '/' + location.pathname.split('/')[1] + '/' : '/') + '">');
+</script>
+<title>Page not found · Mini Krunch</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Bagel+Fat+One&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#77197e">
+<style>
+  :root { --purple: #77197e; --yellow: #f6c55e; --brown: #531607; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100svh; display: grid; place-items: center; padding: 40px 24px;
+    background: var(--purple); color: #fff; text-align: center;
+    font-family: Montserrat, 'Noto Sans KR', system-ui, sans-serif; overflow-x: hidden;
+  }
+  body:lang(ko) { font-family: 'Noto Sans KR', Montserrat, system-ui, sans-serif; }
+  .logo { position: fixed; top: 24px; left: 6%; font-family: 'Bagel Fat One', system-ui; font-size: 26px; color: #fff; text-decoration: none; text-transform: uppercase; }
+  .box { max-width: 460px; }
+  .cup { width: min(220px, 52vw); filter: drop-shadow(0 24px 24px rgba(30, 0, 30, .35)); animation: wobble 2.6s ease-in-out infinite; transform-origin: 50% 90%; }
+  @keyframes wobble { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+  .code { font-family: 'Bagel Fat One', system-ui; font-size: 22px; color: var(--yellow); letter-spacing: .08em; margin: 28px 0 6px; }
+  h1 { font-family: 'Bagel Fat One', system-ui; font-weight: 400; font-size: clamp(32px, 8vw, 48px); line-height: 1.05; margin: 0 0 14px; }
+  p { font-size: 15px; line-height: 1.7; margin: 0 0 30px; opacity: .92; }
+  .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .pill { display: inline-block; padding: 14px 26px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform .2s; }
+  .pill:hover { transform: translateY(-2px); }
+  .pill.solid { background: var(--yellow); color: var(--brown); }
+  .pill.line { border: 1.5px solid rgba(255, 255, 255, .7); color: #fff; }
+  a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { .cup { animation: none; } }
+</style>
+</head>
+<body>
+<a class="logo" href="index.html">Konu</a>
+<main class="box">
+  <img class="cup" src="assets/cups/choco.webp" alt="">
+  <div class="code">404</div>
+  <h1 data-ko="이 페이지는 간식 먹으러 갔어요">This page went on a snack break</h1>
+  <p data-ko="찾으시는 페이지가 없어요. 대신 크런치를 찾아볼까요?">We couldn't find the page you were looking for. Let's find you some krunch instead.</p>
+  <div class="btns">
+    <a class="pill solid" href="index.html" data-ko="홈으로">Back to home</a>
+    <a class="pill line" href="stores.html" data-ko="구매처 찾기">Find a store</a>
+  </div>
+</main>
+<script>
+  // show Korean if the visitor picked it on the main site
+  try {
+    if (localStorage.getItem('miniKrunchLang') === 'ko') {
+      document.documentElement.lang = 'ko';
+      document.title = '페이지를 찾을 수 없어요 · Mini Krunch';
+      document.querySelectorAll('[data-ko]').forEach(el => { el.textContent = el.dataset.ko; });
+    }
+  } catch (e) {}
+</script>
+</body>
+</html>
