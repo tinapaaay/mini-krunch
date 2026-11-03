@@ -41,3 +41,7 @@ Product photos are WebP files in `assets/` (about 90% smaller than PNG). To add 
 
 `assets/og-image.jpg` is the picture shown when the link is shared on Messenger, Facebook or iMessage. Once the site is live, change the `og:image` tags in `index.html` and `stores.html` to the full address (like `https://<your-site>/assets/og-image.jpg`), since some apps need that.
 
+
+## Development guide
+
+See [Development and maintenance](docs/DEVELOPMENT.md) for setup, source files, implementation limits, editing instructions, verification, and deployment.
