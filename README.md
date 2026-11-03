@@ -33,7 +33,7 @@ Then open http://localhost:5174.
 - Shop links for checkout: `SHOPS` in `index.html`
 - Exchange rates and Korean translations: `assets/site.js`
 - Store list: `assets/stores.js`
-- Styles: `assets/site.css`
+- Styles: `assets/site.css` (all colors are tokens at the top; see `docs/DEVELOPMENT.md`)
 
 ## Images
 

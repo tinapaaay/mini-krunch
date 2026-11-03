@@ -12,6 +12,21 @@ Static product site with inline flavor/cart logic, shared language/currency help
 
 Edit `flavors`, `CEREAL_JAR`, and `SHOPS` in `index.html`, translations/rates in `assets/site.js`, store records in `assets/stores.js`, filtering in `assets/store-finder.js`, and styles in `assets/site.css`.
 
+## Colors (design tokens)
+
+All site colors are defined once, in the `design tokens` block at the top of `assets/site.css`. In rules, use `var(--name)` instead of typing a hex code:
+
+| Group | Tokens |
+|---|---|
+| Konu brand | `--konu-purple`, `--konu-purple-soft`, `--konu-yellow`, `--konu-brown` |
+| Surfaces | `--white`, `--cream` (section background), `--cream-warm`, `--navy` (concept note bar) |
+| Lilac ramp (text and tints on purple) | `--lilac-50`, `--lilac-100`, `--lilac-200`, `--lilac-300`, `--lavender` |
+| Text on light backgrounds | `--text-soft`, `--text-faint`, `--text-disabled` |
+| Text on the brown Our Story section | `--on-brown`, `--on-brown-soft` |
+| See-through shadows and borders | `rgba(var(--brown-rgb), .1)`; also `--yellow-rgb`, `--white-rgb`, `--shadow-rgb` |
+
+The hero's `--bg`, `--ink` and `--muted` change per flavor; set them in the `flavors` list in `index.html`, not in CSS. Product data colors (flavor backgrounds, store chain chips, contact icon tiles) stay with their data. `404.html` has a small copy of the brand tokens because it does not load `site.css`.
+
 ## Source map
 
 - [`404.html`](../404.html)

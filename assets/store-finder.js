@@ -27,7 +27,7 @@
     chips.innerHTML = ['all', ...chains].map(c => {
       const label = c === 'all' ? t('stores.all') : c;
       const num = c === 'all' ? inCountry.length : inCountry.filter(st => st.chain === c).length;
-      return `<button class="chip" data-chain="${esc(c)}" aria-pressed="${chain === c}" style="--k:${CHAIN_COLORS[c] || '#531607'}">${esc(label)} <small>${num}</small></button>`;
+      return `<button class="chip" data-chain="${esc(c)}" aria-pressed="${chain === c}" style="--k:${CHAIN_COLORS[c] || 'var(--konu-brown)'}">${esc(label)} <small>${num}</small></button>`;
     }).join('');
 
     const q = fold(query.trim());
