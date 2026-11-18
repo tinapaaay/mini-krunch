@@ -19,12 +19,10 @@
     --lilac-100: #f8ecf7;
     --lilac-200: #f3dff4;
     --lilac-300: #e8c9ea;
-    --lavender: #b48cf1;
 
     /* text on light backgrounds */
     --text-soft: #7a4b3f;
     --text-faint: #8e6356;
-    --text-disabled: #b3968d;
 
     /* text on the brown Our Story section */
     --on-brown: #f3e2d4;
@@ -42,7 +40,7 @@
     --fs-body: 15px;                           /* paragraphs */
     --fs-lg: 17px;                             /* lead text, card titles, prices */
     --fs-xl: 22px;                             /* small headings, big prices */
-    --fs-2xl: clamp(22px, 2.2vw, 28px);        /* logos, marquee, address */
+    --fs-2xl: clamp(22px, 2.2vw, 28px);        /* logos, marquee, card callouts */
     --fs-display: clamp(32px, 4.2vw, 56px);    /* section headings, hero title */
     --fs-hero: clamp(40px, 5.4vw, 72px);       /* stat numbers, order band title */
 
@@ -161,7 +159,7 @@
     margin: 0 0 22px;
   }
   .desc {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-body);
     line-height: 1.75;
     color: var(--muted);
     max-width: 300px;
@@ -370,20 +368,19 @@
     padding: 30px 28px; color: var(--konu-brown); text-decoration: none;
     transition: transform .3s var(--ease), box-shadow .3s;
   }
-  a.ccard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .ccard.address { grid-row: span 2; background: var(--konu-brown); color: var(--cream); border: 0; }
+  .ccard.about { background: var(--konu-brown); color: var(--cream); border: 0; }
+  .ccard.about p { margin: 12px 0 0; font-size: var(--fs-body); line-height: 1.7; color: var(--on-brown); }
   .ccard .ficon { margin-bottom: 18px; }
   .ccard small { font-size: var(--fs-label); letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--text-faint); }
-  .ccard.address small { color: var(--konu-yellow); }
+  .ccard.about small { color: var(--konu-yellow); }
   .ccard strong { font-size: var(--fs-lg); font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
-  .ccard.address strong { font-size: var(--fs-2xl); line-height: 1.35; }
+  .ccard.about strong { font-size: var(--fs-2xl); line-height: 1.35; }
   .ccard .go { margin-top: auto; padding-top: 18px; font-size: var(--fs-sm); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
   .ccard .go svg { width: 14px; height: 14px; transition: transform .25s; }
-  a.ccard:hover .go svg { transform: translateX(4px); }
   .ccard.wide { grid-column: span 2; }
   @media (max-width: 1100px) {
     .contact-grid { grid-template-columns: 1fr 1fr; }
-    .ccard.address { grid-row: auto; grid-column: 1 / -1; }
+    .ccard.about { grid-column: 1 / -1; }
   }
   @media (max-width: 680px) {
     .contact-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -597,7 +594,7 @@
   .store .addr { font-size: var(--fs-sm); line-height: 1.6; color: var(--text-soft); margin: 0; }
   .store .phone { font-size: var(--fs-sm); font-weight: 600; color: var(--konu-brown); text-decoration: none; }
   .store a.phone:hover { text-decoration: underline; text-underline-offset: 3px; }
-  .store .phone.none { font-weight: 500; color: var(--text-disabled); }
+  .store .phone.none { font-weight: 500; color: var(--text-faint); }
   .store-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 14px; flex-wrap: wrap; }
   .store-actions a { font-size: var(--fs-label); font-weight: 600; text-decoration: none; color: var(--konu-brown); border: 1.5px solid rgba(var(--brown-rgb), .18); border-radius: var(--radius-full); padding: 8px 14px; transition: background-color .2s, color .2s; }
   .store-actions a:first-child { background: var(--konu-brown); color: var(--cream); border-color: var(--konu-brown); }
@@ -684,15 +681,11 @@
     .story-btn { margin-left: 0; }
   }
 
-  /* ================= contact: map, socials, brand tiles ================= */
-  .ccard.address .ccard-map { width: 100%; flex: 1; min-height: 190px; margin-top: 20px; border: 0; border-radius: var(--radius-md); background: #6b2a17; }
+  /* ================= about this concept: Konu links ================= */
   .ccard .go { color: inherit; text-decoration: none;}
-  div.ccard .go:hover svg { transform: translateX(4px); }
-  .phone-card { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .phone-main { display: flex; flex-direction: column; gap: 6px; }
-  .phone-main strong a { color: inherit; text-decoration: none; }
-  .socials { display: flex; flex-direction: column; gap: 10px; padding-left: 28px; border-left: 1px solid rgba(var(--brown-rgb), .1); }
-  .socials small { margin-bottom: 4px; }
+  .ccard .go:hover svg { transform: translateX(4px); }
+  .konu-card { justify-content: center; gap: 18px; }
+  .socials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .social { display: flex; align-items: center; gap: 12px; color: var(--konu-brown); text-decoration: none; font-size: var(--fs-label); color: var(--text-soft); border-radius: var(--radius-md); padding: 6px; margin-left: -6px; transition: background-color .2s; }
   .social b { display: block; font-size: var(--fs-body); font-weight: 600; color: var(--konu-brown); }
   .social:hover { background: var(--cream-warm); }
@@ -701,8 +694,7 @@
   .social:nth-of-type(2) .social-ico { background: var(--konu-brown); }
   .social:nth-of-type(3) .social-ico { background: var(--konu-yellow); color: var(--konu-brown); }
   @media (max-width: 680px) {
-    .phone-card { grid-template-columns: 1fr; gap: 22px; }
-    .socials { padding-left: 0; border-left: 0; padding-top: 20px; border-top: 1px solid rgba(var(--brown-rgb), .1); }
+    .socials { grid-template-columns: 1fr; }
   }
 
   /* ================= scroll effects ================= */
@@ -719,13 +711,12 @@
     .sound-btn, .cart-btn { padding: 10px; margin: -6px; }
     .add { padding: 11px; margin: -7px; }
     .lang { min-height: 40px; }
-    .footer li a, .footer .tag a { display: inline-block; padding: 6px 0; }
+    .footer li a { display: inline-block; padding: 6px 0; }
   }
   @media (max-width: 680px) {
-    .ccard.address .ccard-map { min-height: 150px; }
     .ccard .ficon { width: 44px; height: 44px; margin-bottom: 14px; }
     .ccard .ficon svg { width: 22px; height: 22px; }
-    .ccard.address strong { font-size: var(--fs-xl); }
+    .ccard.about strong { font-size: var(--fs-xl); }
   }
 
   /* ================= cart: order on a shop ================= */
@@ -736,6 +727,8 @@
   /* ---------- unofficial concept note ---------- */
   .concept-note { margin: 0; height: 26px; padding: 0 16px; background: var(--navy); color: var(--white); font: 500 var(--fs-label)/26px Montserrat, system-ui, sans-serif; letter-spacing: .02em; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .concept-note ~ main .card { height: calc(100vh - 26px); height: calc(100svh - 26px); min-height: 534px; }
+  .logo, .lang, #prefsLabel { white-space: nowrap; }
+  @media (max-width: 680px) { header .logo, .topbar .logo { font-size: var(--fs-lg); } header { gap: 12px; } .header-right { flex: none; gap: 12px; } }
   .concept-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
   @media (max-width: 680px) {
     .concept-note { height: auto; padding: 5px 16px; line-height: 1.4; white-space: normal; }

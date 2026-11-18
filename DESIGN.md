@@ -1,225 +1,403 @@
-# Mini Krunch design system
+---
+version: alpha
+name: Mini Krunch concept
+description: An unofficial portfolio website concept for Konu's Mini Krunch cereal cups, where each flavor floods the first screen with its own color.
 
-How the Mini Krunch site looks, sounds and behaves, and the rules for keeping it that way. Every value below lives in the `design tokens` block at the top of [`assets/site.css`](assets/site.css). When you add something new, reuse a token instead of typing a new value.
+colors:
+  primary: "#77197E"
+  primary-soft: "#904A95"
+  secondary: "#F6C55E"
+  neutral: "#FBF1DF"
+  surface: "#FBF6EE"
+  surface-raised: "#FFFFFF"
+  on-surface: "#531607"
+  on-surface-soft: "#7A4B3F"
+  on-surface-faint: "#8E6356"
+  on-brown: "#F3E2D4"
+  on-brown-soft: "#ECD3C1"
+  on-primary: "#FFFFFF"
+  lilac-50: "#FBEEFB"
+  lilac-100: "#F8ECF7"
+  lilac-200: "#F3DFF4"
+  lilac-300: "#E8C9EA"
+  navy: "#1F2456"
+  flavor-cookies: "#9FA8E0"
+  flavor-strawberry: "#F3AABB"
+  on-flavor-strawberry: "#4A1F2B"
+  flavor-matcha: "#5E7845"
+  flavor-pistachio: "#E6D9A6"
+  on-flavor-pistachio: "#3B3218"
+  shop-shopee: "#D23C1E"
+  shop-lazada: "#0F146D"
+  shop-tiktok: "#111111"
 
-*Unofficial concept by Tinapay. Konu and Mini Krunch belong to their owners.*
+typography:
+  display-xl:
+    fontFamily: Bagel Fat One
+    fontSize: 72px
+    fontWeight: 400
+    lineHeight: 1.05
+  display-lg:
+    fontFamily: Bagel Fat One
+    fontSize: 56px
+    fontWeight: 400
+    lineHeight: 1.12
+  stat:
+    fontFamily: Montserrat
+    fontSize: 72px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: -0.03em
+    fontFeature: "'tnum' 1"
+  title-lg:
+    fontFamily: Montserrat
+    fontSize: 28px
+    fontWeight: 600
+    lineHeight: 1.35
+  title-md:
+    fontFamily: Montserrat
+    fontSize: 22px
+    fontWeight: 600
+    lineHeight: 1.35
+  body-lg:
+    fontFamily: Montserrat
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.8
+  body-md:
+    fontFamily: Montserrat
+    fontSize: 15px
+    fontWeight: 400
+    lineHeight: 1.75
+  ui:
+    fontFamily: Montserrat
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+  label:
+    fontFamily: Montserrat
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 0.22em
+  button-sm:
+    fontFamily: Montserrat
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.3
+  button-md:
+    fontFamily: Montserrat
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.3
+  button-lg:
+    fontFamily: Montserrat
+    fontSize: 15px
+    fontWeight: 700
+    lineHeight: 1.3
 
+rounded:
+  sm: 10px
+  md: 16px
+  lg: 24px
+  full: 999px
+
+spacing:
+  grid-phone: 12px
+  grid: 20px
+  section-head: 48px
+  section-min: 72px
+  section-max: 120px
+  content-max: 1240px
+
+components:
+  page:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.body-md}"
+  section-white:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.on-surface}"
+  section-story:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.neutral}"
+  story-text:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.on-brown}"
+    typography: "{typography.body-md}"
+  story-intro:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.on-brown-soft}"
+    typography: "{typography.body-lg}"
+  section-stats:
+    backgroundColor: "{colors.secondary}"
+    textColor: "{colors.on-surface}"
+  stat-number:
+    backgroundColor: "{colors.secondary}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.stat}"
+  section-order:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.display-xl}"
+    padding: "{spacing.section-max}"
+  store-page:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.on-surface}"
+  footer:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.lilac-200}"
+  footer-tag:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.lilac-300}"
+  footer-link:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.lilac-50}"
+  concept-note:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.label}"
+  section-label:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label}"
+  card:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.on-surface-soft}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.lg}"
+  card-meta:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.on-surface-faint}"
+    typography: "{typography.label}"
+  about-card:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.surface}"
+    typography: "{typography.title-lg}"
+    rounded: "{rounded.lg}"
+  menu-option-hover:
+    backgroundColor: "{colors.lilac-100}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.ui}"
+    rounded: "{rounded.sm}"
+  button-primary:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.surface}"
+    typography: "{typography.button-md}"
+    rounded: "{rounded.full}"
+    padding: 14px 30px
+  button-primary-hover:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.surface}"
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.button-md}"
+    rounded: "{rounded.full}"
+    padding: 14px 30px
+  button-accent:
+    backgroundColor: "{colors.secondary}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.button-md}"
+    rounded: "{rounded.full}"
+    padding: 14px 30px
+  button-accent-hover:
+    backgroundColor: "{colors.surface-raised}"
+    textColor: "{colors.on-surface}"
+  button-small:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.flavor-cookies}"
+    typography: "{typography.button-sm}"
+    rounded: "{rounded.full}"
+  button-large:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.surface}"
+    typography: "{typography.button-lg}"
+    rounded: "{rounded.full}"
+  button-shop-shopee:
+    backgroundColor: "{colors.shop-shopee}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.full}"
+  button-shop-lazada:
+    backgroundColor: "{colors.shop-lazada}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.full}"
+  button-shop-tiktok:
+    backgroundColor: "{colors.shop-tiktok}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.full}"
+  flavor-card-cookies:
+    backgroundColor: "{colors.flavor-cookies}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.lg}"
+  flavor-card-strawberry:
+    backgroundColor: "{colors.flavor-strawberry}"
+    textColor: "{colors.on-flavor-strawberry}"
+    rounded: "{rounded.lg}"
+  flavor-card-matcha:
+    backgroundColor: "{colors.flavor-matcha}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.lg}"
+  flavor-card-choco:
+    backgroundColor: "{colors.primary-soft}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.lg}"
+  flavor-card-pistachio:
+    backgroundColor: "{colors.flavor-pistachio}"
+    textColor: "{colors.on-flavor-pistachio}"
+    rounded: "{rounded.lg}"
+  badge:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.ui}"
+    rounded: "{rounded.full}"
+  toast:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.surface}"
+    typography: "{typography.ui}"
+    rounded: "{rounded.full}"
 ---
 
-## 1. Principles
+# Mini Krunch concept
 
-1. **The product is the hero.** Cup and jar photos are the biggest, first thing on every screen. Layouts make room for them.
-2. **One flavor, one color.** Each flavor has its own background and text color, and the hero recolors itself when you switch flavors.
-3. **Playful, but readable.** Chunky headings and bouncy animations are fine; body text, contrast and tap sizes still meet accessibility minimums.
-4. **Konu colors everywhere else.** Outside the hero, use only the brand purple, yellow and brown plus their tints.
-5. **Built for two languages.** Every label works in English and Korean, so layouts can't depend on exact text length.
+## Overview
 
-## 2. Voice
+**Direction: Flavor Flood.** The first screen gives one flavor the entire window, then changes everything when you change the cup. The packaging supplies the personality, so the interface stays simple around it. The trade-off is subtlety: this system chooses loud, saturated color blocks over quiet editorial restraint.
 
-| Do | Don't |
-|---|---|
-| Short, casual, snack-talk: "Crunch for your cravings", "Let's talk krunch" | Corporate or formal wording |
-| Sentence case for headings and buttons: "Find a store" | Title Case or ALL CAPS (uppercase is a style, applied with CSS only on small labels) |
-| US spelling: "flavor", "favorite" | Mixing in "flavour", "favourite" |
-| "krunch" wordplay in headings | Wordplay in buttons and error messages; keep those plain |
-| Describe what happens: "Add to cart", "Show more stores" | "Click here", "Submit" |
+This file records the site as built. Tokens in the YAML are the rules. `assets/site.css` exposes them as CSS custom properties, which are named values reused across the code (a **design token** in code form).
 
----
+Five ideas guide decisions:
 
-## 3. Color
+1. **The product leads.** A cup or jar is the largest thing in a product section.
+2. **One flavor, one color.** The hero reads `--bg`, `--ink` and `--muted` from the current flavor, so anything inside it recolors together.
+3. **Konu's colors everywhere else.** Purple, yellow and brown carry the page after the hero.
+4. **Playful does not excuse hard reading.** Text keeps a 4.5:1 **contrast ratio**, the measured difference between text and background.
+5. **Two languages are normal.** English and Korean must both fit, so layouts cannot depend on exact text length.
 
-### Brand
-| Token | Value | Use |
+### Voice and honesty
+
+This is an unofficial concept. The site talks *about* Konu, never *as* Konu.
+
+- Use "Konu" or "Mini Krunch", not "we", "our" or "us".
+- Attribute claims: "Konu says", "These figures come from Konu".
+- Call every price a sample. Never imply checkout, ordering or customer support here.
+- Send real questions to Konu's official pages. Do not publish its email, phone or address as a contact route.
+- Write short, casual sentence case with US spelling. Keep "krunch" wordplay for headings; buttons say exactly what happens.
+
+## Colors
+
+Purple `primary`, yellow `secondary` and brown `on-surface` are the Konu brand colors. Flavor colors sit beside them because they belong to the cups, not to the page chrome.
+
+| YAML token | CSS variable | Job |
 |---|---|---|
-| `--konu-purple` | `#77197e` | Marquee, purple band, footer, badges, top bar on the stores page |
-| `--konu-purple-soft` | `#904a95` | Choco Crunch flavor background |
-| `--konu-yellow` | `#f6c55e` | Stats section, accent buttons, highlights on dark backgrounds |
-| `--konu-brown` | `#531607` | Main text on light backgrounds, Our Story section, primary buttons |
+| `primary` | `--konu-purple` | Marquee, order band, footer, badges, section labels |
+| `primary-soft` | `--konu-purple-soft` | Choco Crunch and the stats hill |
+| `secondary` | `--konu-yellow` | Stats section and the accent button on dark color |
+| `on-surface` | `--konu-brown` | Main text, Our Story, primary buttons |
+| `surface` | `--cream` | Default section background |
+| `surface-raised` | `--white` | Cards and the best seller section |
+| `neutral` | `--cream-warm` | Store page, text on brown, quiet hover tint |
+| `on-surface-soft` | `--text-soft` | Secondary paragraphs |
+| `on-surface-faint` | `--text-faint` | Small meta text on light backgrounds |
+| `on-brown`, `on-brown-soft` | same names | Text on Our Story |
+| `lilac-50` to `lilac-300` | same names | Footer text and menu hover |
+| `navy` | `--navy` | Disclaimer bar and Cookies & Cream text |
 
-### Surfaces
-| Token | Value | Use |
-|---|---|---|
-| `--white` | `#fff` | Best seller section, cards on cream |
-| `--cream` | `#fbf6ee` | Default section background |
-| `--cream-warm` | `#fbf1df` | Store finder page, hover tints |
-| `--navy` | `#1f2456` | Unofficial-concept bar |
-
-### Lilac ramp (text and tints on purple)
-`--lilac-50` `#fbeefb` · `--lilac-100` `#f8ecf7` · `--lilac-200` `#f3dff4` · `--lilac-300` `#e8c9ea` · `--lavender` `#b48cf1`
-
-### Text
-| Token | Value | Use | Contrast |
-|---|---|---|---|
-| `--konu-brown` | `#531607` | Headings and body on light backgrounds | 13.1:1 on cream |
-| `--text-soft` | `#7a4b3f` | Secondary paragraphs | 7.2:1 on white, 6.7:1 on cream |
-| `--text-faint` | `#8e6356` | Small labels and meta | 4.5:1 or more on every light background |
-| `--text-disabled` | `#b3968d` | "No phone listed" and similar | Decorative only |
-| `--on-brown`, `--on-brown-soft` | `#f3e2d4`, `#ecd3c1` | Text on the brown Our Story section | |
-
-### See-through colors
-For shadows, borders and overlays, use the RGB channel tokens with `rgba()`: `rgba(var(--brown-rgb), .1)`. Available: `--brown-rgb`, `--yellow-rgb`, `--white-rgb`, `--shadow-rgb` (the cool shadow under cups in the hero).
+Use `rgba(var(--brown-rgb), .1)` for see-through borders and shadows. The matching channel tokens are `--yellow-rgb`, `--white-rgb` and `--shadow-rgb`.
 
 ### Flavor themes
-Set in the `flavors` list in `index.html`, not in CSS. The hero reads them into `--bg`, `--ink` and `--muted`.
 
 | Flavor | Background | Text | Contrast |
 |---|---|---|---|
-| Cookies & Cream | `#9fa8e0` | `#1f2456` | 6.3:1 |
-| Strawberry Krunch | `#f3aabb` | `#4a1f2b` | 7.4:1 |
-| Matcha Crunch | `#5e7845` | `#ffffff` | 4.9:1 |
-| Choco Crunch | `#904a95` | `#ffffff` | 5.8:1 |
-| Pistachio Knafeh | `#e6d9a6` | `#3b3218` | 9.0:1 |
+| Cookies & Cream | `flavor-cookies` | `navy` | 6.3:1 |
+| Strawberry Krunch | `flavor-strawberry` | `on-flavor-strawberry` | 7.4:1 |
+| Matcha Crunch | `flavor-matcha` | `on-primary` | 4.9:1 |
+| Choco Crunch | `primary-soft` | `on-primary` | 5.8:1 |
+| Pistachio Knafeh | `flavor-pistachio` | `on-flavor-pistachio` | 9.0:1 |
 
-New flavor rule: light background → dark text, dark background → white text, and check that **both** the title color and the 80–90% "muted" color reach 4.5:1.
+Flavor values live in the `flavors` list in `index.html`. New flavors must pass 4.5:1 for both their title color and softer description color.
 
-### Page rhythm
-Sections alternate light and colored so the page never feels like one long block:
+Store-chain dots and stat dots use flavor-family accents stored with their data. They are decorative and must never be the only way to understand something.
 
-hero (flavor color) → flavors (cream) → marquee (purple) → best seller (white) → why (cream) → Our Story (brown) → stats (yellow) → order band (purple) → contact (cream) → footer (purple)
+## Typography
 
-Avoid putting two colored sections next to each other unless one is the thin marquee.
+**Bagel Fat One** does the talking: logo, hero title, section headings and timeline tags. It has one weight, so never fake bold. **Montserrat** handles reading and controls. **Noto Sans KR** follows both in every font stack so Korean text has a matching fallback.
 
----
+The CSS scale is `--fs-label` 12px, `--fs-sm` 13px, `--fs-body` 15px, `--fs-lg` 17px, `--fs-xl` 22px, `--fs-2xl` 22 to 28px, `--fs-display` 32 to 56px and `--fs-hero` 40 to 72px. The YAML lists each fluid size at its largest value. A **type scale** is a short set of agreed sizes, which is why similar content looks related.
 
-## 4. Typography
+Paragraphs stay near 520px wide or less. Uppercase labels use 0.22em tracking in English and 0.04em in Korean.
 
-### Fonts
-| Font | Use |
-|---|---|
-| **Bagel Fat One** | Logo, hero title, section headings, timeline years. Always weight 400 (it's already heavy). |
-| **Montserrat** | Everything else: body, buttons, labels, prices. Weights 400–700. |
-| **Noto Sans KR** | Korean text. Listed second in every font stack so it takes over for Korean characters. |
+## Layout
 
-### Scale (8 sizes)
-| Token | Size | Use |
+Content sits in a centered 1240px `.wrap`, with 6% side gutters. Sections use `clamp(72px, 10vw, 120px)` top and bottom. Section headers stack label, heading and intro on the left, followed by 48px of space.
+
+| Breakpoint | Rule | Main change |
 |---|---|---|
-| `--fs-label` | 12px | Uppercase labels, meta lines, chips, small buttons |
-| `--fs-sm` | 13px | Navigation, buttons, small UI text |
-| `--fs-body` | 15px | Paragraphs |
-| `--fs-lg` | 17px | Lead paragraphs, card titles, prices |
-| `--fs-xl` | 22px | Small headings, big prices |
-| `--fs-2xl` | 22–28px | Logos, marquee, the address in Contact |
-| `--fs-display` | 32–56px | Section headings and the hero title |
-| `--fs-hero` | 40–72px | Stat numbers, the "Grab a cup" title |
+| Phone | `max-width: 680px` | Hero stacks; flavors use two columns; other grids use one |
+| Tablet | `max-width: 900px` | Header links hide; best seller, story and stats simplify |
+| Laptop | `max-width: 1100px` | Flavors use three columns; about and store grids use two |
 
-The three largest sizes grow with the screen width (`clamp()`), so they don't need phone overrides.
+CSS media queries cannot read custom properties, so these numbers must be typed exactly.
 
-### Rules
-- **Labels** (`.eyebrow`, `.kicker`): 12px, uppercase, weight 600, letter spacing 0.22em. In Korean the spacing drops to 0.04em, since Korean doesn't need tracking.
-- **Paragraph line height:** 1.7–1.85. Headings: 1.05–1.12.
-- Keep paragraphs under about 520px wide.
+## Elevation & Depth
 
----
+Depth stays warm because shadows use brand brown rather than neutral black.
 
-## 5. Layout and spacing
+- `--shadow-sm`: sticky bars.
+- `--shadow-md`: floating cart and toast.
+- `--shadow-lg`: menus, cart drawer and hovered flavor cards.
+- Product photos use `filter: drop-shadow()` so the shadow follows the cup outline.
+- Timeline and stat rings are outlines, not elevation.
 
-| Thing | Value |
-|---|---|
-| Content width | `.wrap`, max 1240px, centered |
-| Side gutters | 6% of the screen |
-| Section padding | `clamp(72px, 10vw, 120px)` top and bottom |
-| Section header to content | 48px |
-| Card grid gaps | 12–20px |
+## Shapes
 
-### Breakpoints (3)
-| Name | Rule | What changes |
-|---|---|---|
-| Phone | `max-width: 680px` | Hero stacks, flavor grid 2 columns, one-column contact and stores, bigger tap areas |
-| Tablet | `max-width: 900px` | Nav links hide, best seller and Our Story stack, stats 2 columns |
-| Laptop | `max-width: 1100px` | Flavor grid 3 columns, contact and stores 2 columns |
+Use `rounded.lg` for cards, `rounded.md` for menus and image tiles, `rounded.sm` for small rows and icons, and `rounded.full` for pills and circles. The hero floor shadow and stats hill keep `border-radius: 50%` because they are ovals.
 
-CSS can't use variables inside `@media`, so type these exact numbers.
+## Components
 
----
+The site has one button system: `.btn` with `--primary`, `--secondary`, `--accent` or `--icon`, plus `--sm`, `--lg`, `--block` and `--loading`. Its full reference is [docs/components/button.md](docs/components/button.md).
 
-## 6. Shape, depth and motion
-
-### Corner radius (4)
-`--radius-sm` 10px (small tiles, menu rows) · `--radius-md` 16px (icon tiles, images, menus) · `--radius-lg` 24px (cards) · `--radius-full` (pills and circles)
-
-Exception: two shapes keep `border-radius: 50%` because they're ovals, not rounded corners: the shadow under the hero cup and the stats hill.
-
-### Elevation (3)
-| Token | Use |
-|---|---|
-| `--shadow-sm` | Sticky bars |
-| `--shadow-md` | Floating cart button, toast |
-| `--shadow-lg` | Hovered cards, menus, cart drawer |
-
-Product photos use `filter: drop-shadow()` instead, so the shadow follows the cup's shape.
+- **Flavor card (`.fcard`)**: flavor background, tilted cup, name, sample price and add button.
+- **Feature card (`.feature`)**: white card with a tinted icon tile.
+- **About card (`.ccard.about`)**: brown credit card explaining who made the concept.
+- **Konu links (`.konu-card`)**: official social links.
+- **Chip (`.chip`)**: pill with a colored dot; selected store filters use `aria-pressed`.
+- **Cart (`.cart`)**: keeps keyboard focus inside while open and closes with Escape, the close button or overlay. Its shop buttons say "Look on", because no order happens here.
+- **Toast (`.toast`)**: confirms an added item and stays out of the tab order while hidden.
 
 ### Motion
-| Token / value | Use |
-|---|---|
-| `--ease` `cubic-bezier(.7, 0, .2, 1)` | Slides, color fades, the hero switching flavors |
-| `--ease-bounce` `cubic-bezier(.3, 1.5, .5, 1)` | Playful pops: cart count, items landing in the cart, headings appearing word by word |
-| `--speed` 900ms | Hero background color fade |
-| 0.2–0.3s | Hovers |
 
-With **reduce motion** turned on, there's no word animation, parallax, button lift or slide timing, and the cart animation is skipped. Every new animation needs a `prefers-reduced-motion` fallback.
+`--ease` handles slides and color changes. `--ease-bounce` handles small pops. The flavor change is the signature motion; cart feedback answers a person's action. Every animation needs a `prefers-reduced-motion` fallback. Scroll reveals hide content only after the page script has added the `js` class.
 
----
+### Imagery
 
-## 7. Components
+Use transparent WebP product cutouts around 600px wide unless a larger crop is needed. Keep icons simple with round caps. The share image is `assets/og-image.jpg` at 1200 by 630 and must identify the site as an unofficial concept.
 
-| Component | Class | Notes |
-|---|---|---|
-| **Button** | `.btn` + `--primary` / `--secondary` / `--accent` / `--icon` | Full spec: [docs/components/button.md](docs/components/button.md) |
-| Flavor card | `.fcard` | Background is the flavor color, cup photo tilted −6°, straightens and lifts on hover. Add button (`.fadd`) bottom right. |
-| Feature card | `.feature` | White card on cream, 58px tinted icon tile, title + one short paragraph |
-| Contact card | `.ccard` | Same card shape as features; the address variant is brown with a map |
-| Chip | `.chip` | Pill with a colored dot for store chains. `aria-pressed="true"` shows the selected state. |
-| Section header | `.section-head` | Label (`.kicker`) → heading → optional intro paragraph, stacked and left-aligned |
-| Cart drawer | `.cart` | Slides in from the right; keyboard focus stays inside while it's open; closes with Escape, the × button or the overlay |
-| Toast | `.toast` | Brown pill at the bottom center after adding to cart; hidden and out of the tab order the rest of the time |
-| Language and currency menu | `.prefs-menu` | Dropdown from the header; the selected options show a checkmark |
-| Badge | `.badge` | Purple pill, uppercase label ("Best seller") |
+### Known gaps
 
----
+- `.best p`, `.stats .section-head p` and the jar glow still use one-off colors.
+- Product drop shadows are not tokenized.
+- Spacing tokens describe the page structure, but component padding is still local.
+- The site repeats uppercase labels, reveal animations and card grids more than the direction needs. Reduce these in the redesign.
+- "Over 400 stores", "12k locations" and the 258 listed stores have not been reconciled.
 
-## 8. Patterns
+## Do's and Don'ts
 
-**Per-flavor theming.** The hero sets `--bg`, `--ink` and `--muted` from the current flavor. Anything inside the hero uses those variables, never fixed colors, so it recolors automatically.
+- Do let one flavor color own the full hero. Don't add a competing background shape behind it.
+- Do reuse a token before adding a value. If a new value is truly needed, update this file in the same change.
+- Do use the accent button only on brown or purple. Don't use it as a general highlight on cream.
+- Do keep one primary or accent action per section.
+- Do show prices as samples. Don't write "buy", "checkout" or "order here".
+- Do write about Konu in the third person. Don't use "our story" or "contact us".
+- Do link to Konu's official pages. Don't add Konu's email, phone or address as support details.
+- Do test contrast on hover too. Don't rely on a brand color passing automatically.
+- Do check English and Korean at 375px. Don't fit a layout to one language.
 
-**Add-to-cart feedback.** Three layers, every time:
-1. The cup flies to the cart icon.
-2. A soft pop and chime play; the sound can be muted from the header.
-3. The cart count bounces and the toast appears.
+Lint after every edit:
 
-**Scroll reveals.** Sections fade up once as they enter the screen; big headings appear word by word. Each section animates only the first time. A tiny script in each page's `<head>` adds a `js` class to `<html>`, and sections are only hidden while that class is there, so if scripts fail to load, everything is still visible.
-
-**Two languages, three currencies.** English text lives in the HTML; Korean in `assets/site.js`. Mark translatable text with `data-i18n` (text), `data-i18n-html`, `data-i18n-aria` (labels), `data-i18n-ph` (placeholders) or `data-i18n-alt` (image descriptions). Prices are stored in pesos and converted on screen.
-
-**Store finder.** Search, country tabs, chain chips and "Show more" (12 at a time). On the home page, store chains appear as chips inside the purple band.
-
----
-
-## 9. Accessibility checklist
-
-- Text contrast is at least **4.5:1** (3:1 for text 24px+). Check both the normal and hover colors.
-- Every interactive element is reachable by keyboard and shows the 2px focus outline.
-- Icon-only buttons have an `aria-label` (and `data-i18n-aria` for Korean).
-- Tap areas are at least 40px on phones.
-- Images have `alt` text; decorative ones use `alt=""` or `aria-hidden="true"`.
-- Animations respect `prefers-reduced-motion`.
-- Nothing scrolls sideways at 375px.
-
----
-
-## 10. Imagery
-
-- **Product photos:** clean cutouts on transparent backgrounds, WebP, about 600px wide, with a soft drop shadow. Cups lean a little (around −6°) at rest.
-- **Group shots:** the five-cup row (purple band) and the three-cup trio (Our Story), slightly overlapping, with the middle cup in front.
-- **Share image:** `assets/og-image.jpg`, 1200×630, purple with the five cups on a yellow hill.
-- **Icons:** simple line icons with round caps, drawn in `currentColor` or brown: 1.7px stroke in icon tiles, 1.8px for the cart, 2–2.6px for small arrows and close icons.
-
----
-
-## 11. Known inconsistencies
-
-| Item | Note |
-|---|---|
-| Four one-off colors | Two brown text shades (best seller and stats intros), the map placeholder, and the glow behind the jar. Merging them into tokens would slightly change the look. |
-| Image drop shadows | Several slightly different `drop-shadow()` values on product photos; not on the elevation scale yet. |
-| Spacing | No spacing tokens yet; paddings and gaps are set per component. |
-| Store numbers | Copy says "over 400 stores" and "12k locations"; the finder lists 258. Needs confirmed numbers. |
+```bash
+npx -y @google/design.md@0.4.0 lint --format json DESIGN.md
+```

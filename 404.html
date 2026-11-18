@@ -50,8 +50,8 @@
 </style>
 </head>
 <body>
-<p class="concept-note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
-<a class="logo" href="index.html">Konu</a>
+<p class="concept-note" id="conceptNote">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
+<a class="logo" href="index.html">Mini Krunch</a>
 <main class="box">
   <img class="cup" src="assets/cups/choco.webp" alt="">
   <div class="code">404</div>
@@ -68,6 +68,7 @@
     if (localStorage.getItem('miniKrunchLang') === 'ko') {
       document.documentElement.lang = 'ko';
       document.title = '페이지를 찾을 수 없어요 · Mini Krunch';
+      document.getElementById('conceptNote').innerHTML = '<a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a>의 비공식 콘셉트 · Konu와 관련 없음';
       document.querySelectorAll('[data-ko]').forEach(el => { el.textContent = el.dataset.ko; });
     }
   } catch (e) {}

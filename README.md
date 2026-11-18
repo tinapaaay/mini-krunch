@@ -1,6 +1,6 @@
-# Mini Krunch by Konu
+# Mini Krunch website concept
 
-A product website for Konu's Mini Krunch solo cups and cereal jar.
+An unofficial portfolio concept by Tinapay for Konu's Mini Krunch solo cups and cereal jar. It is not affiliated with Konu, does not sell anything, and its prices are samples.
 
 ## Pages
 
@@ -11,7 +11,7 @@ A product website for Konu's Mini Krunch solo cups and cereal jar.
 ## Features
 
 - Full-screen flavor slider (arrows, swipe or keyboard)
-- Cart with quantities, saved in the browser, with "Order on Shopee / Lazada / TikTok" buttons
+- Cart with quantities, saved in the browser, with "Look on Shopee / Lazada / TikTok" buttons
 - Add-to-cart animation and sounds (with a mute button)
 - English and Korean
 - Prices in Philippine peso, Canadian dollar or South Korean won
@@ -39,12 +39,16 @@ Then open http://localhost:5174.
 
 Product photos are WebP files in `assets/` (about 90% smaller than PNG). To add a new photo, export it as PNG, then convert it to WebP (for example at squoosh.app) and save it next to the others.
 
-`assets/og-image.jpg` is the picture shown when the link is shared on Messenger, Facebook or iMessage. Once the site is live, change the `og:image` tags in `index.html` and `stores.html` to the full address (like `https://<your-site>/assets/og-image.jpg`), since some apps need that.
+`assets/og-image.jpg` is the picture shown when the link is shared on Messenger, Facebook or iMessage. The `og:image` tags use its full live address, since some apps require that.
 
 
 ## Design system
 
-See [DESIGN.md](DESIGN.md) for colors, type, components and the rules for keeping the look consistent.
+See [DESIGN.md](DESIGN.md) for colors, type, components and the rules for keeping the look consistent. After editing it, run:
+
+```bash
+npx -y @google/design.md@0.4.0 lint --format json DESIGN.md
+```
 
 ## Development guide
 

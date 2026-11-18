@@ -109,7 +109,7 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
 </button>
 
 <!-- full width, custom brand color -->
-<a class="btn btn--primary btn--block" href="https://shopee.ph/..." target="_blank" rel="noopener" style="--btn-main: #d23c1e">Order on Shopee</a>
+<a class="btn btn--primary btn--block" href="https://shopee.ph/..." target="_blank" rel="noopener" style="--btn-main: #d23c1e">Look on Shopee</a>
 
 <!-- disabled -->
 <button class="btn btn--primary" disabled>Sold out</button>

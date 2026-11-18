@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mini Krunch by Konu</title>
-<meta name="description" content="Bite-size cereal crunch in a solo cup with a free spoon. Five flavors: Cookies & Cream, Strawberry, Matcha, Choco and Pistachio Knafeh.">
+<title>Mini Krunch concept</title>
+<meta name="description" content="An unofficial website concept for Konu's Mini Krunch cereal cups, made by Tinapay as a portfolio project.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Mini Krunch by Konu">
-<meta property="og:title" content="Mini Krunch by Konu">
-<meta property="og:description" content="Bite-size cereal crunch in a solo cup with a free spoon. Five flavors: Cookies & Cream, Strawberry, Matcha, Choco and Pistachio Knafeh.">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:site_name" content="Mini Krunch concept">
+<meta property="og:title" content="Mini Krunch website concept">
+<meta property="og:description" content="An unofficial website concept for Konu's Mini Krunch cereal cups, made by Tinapay as a portfolio project.">
+<meta property="og:image" content="https://tinapaaay.github.io/mini-krunch/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,10 +21,10 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#77197e">
-<link rel="stylesheet" href="assets/site.css?v=15">
+<link rel="stylesheet" href="assets/site.css?v=18">
 </head>
 <body>
-<p class="concept-note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
+<p class="concept-note" data-i18n-html="concept.note">Unofficial concept by <a href="https://tinapaaay.github.io/Personal-Portfolio/">Tinapay</a> · not affiliated with Konu</p>
 
 <main id="main">
 <section class="card" id="card" aria-roledescription="carousel" aria-label="Mini Krunch flavors">
@@ -35,11 +35,11 @@
 
   <div class="main">
     <header>
-      <a class="logo" href="#card">Konu</a>
+      <a class="logo" href="#card">Mini Krunch</a>
       <nav aria-label="Main">
         <a href="#flavors" data-i18n="nav.flavors">Flavors</a>
         <a href="#why" data-i18n="nav.why">Why Solo Cup</a>
-        <a href="#story" data-i18n="ft.story">Our story</a>
+        <a href="#story" data-i18n="ft.story">The story</a>
         <a href="stores.html" data-i18n="nav.buy">Where to buy</a>
       </nav>
       <div class="header-right">
@@ -88,7 +88,7 @@
       <p class="flavor"><span id="flavor">Cookies &amp; Cream</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
       </p>
-      <div class="by" data-i18n="hero.by">by Konu · 60 g · free spoon</div>
+      <div class="by" data-i18n="hero.by">Sample price · 60 g · free spoon</div>
     </div>
 
     <div class="controls">
@@ -112,7 +112,7 @@
         <p class="kicker" data-i18n="fl.kicker">The lineup</p>
         <h2 id="flavors-title" data-i18n="fl.title">Pick your krunch</h2>
       </div>
-      <p data-i18n="fl.lead">Five flavors, one cup size. Tap a cup to see it up close, or add it straight to your cart.</p>
+      <p data-i18n="fl.lead">Five flavors, one cup size. Tap a cup to see it up close. Prices are samples for this concept.</p>
     </div>
     <ul class="fgrid" id="fgrid"></ul>
   </div>
@@ -128,10 +128,10 @@
     <div class="reveal">
       <span class="badge" data-i18n="best.badge">Best seller</span>
       <h2 id="best-title" data-i18n="best.title">Choco Krunch Cereal Jar</h2>
-      <p data-i18n="best.desc">A unique premium chocolate glaze paired with our signature krunchy mini choco cereals — rich, smooth, and definitely not your typical cheap chocolate.</p>
+      <p data-i18n="best.desc">A premium chocolate glaze over krunchy mini choco cereals. Rich, smooth and very snackable.</p>
       <div class="best-buy">
         <button class="btn btn--primary btn--lg" id="bestAdd" data-i18n="hero.add">Add to cart</button>
-        <span class="best-price"><b id="bestPrice"></b> · 160 g</span>
+        <span class="best-price"><b id="bestPrice"></b> · 160 g · <span data-i18n="price.sample">sample price</span></span>
       </div>
     </div>
   </div>
@@ -169,9 +169,9 @@
 <section class="section story" id="story" aria-labelledby="story-title">
   <div class="wrap story-grid">
     <div class="reveal">
-      <p class="kicker" data-i18n="story.kicker">Our Story</p>
+      <p class="kicker" data-i18n="story.kicker">The Konu story</p>
       <h2 id="story-title" data-i18n-html="story.title">It all started with a simple dream to make snacking exciting again.</h2>
-      <p class="story-intro" data-i18n="story.intro">Learn how a simple idea, a lot of taste-testing, and a little chaos turned into your new favorite snack.</p>
+      <p class="story-intro" data-i18n="story.intro">How a simple idea, a lot of taste-testing and a little chaos became Konu.</p>
       <div class="story-cups" aria-hidden="true">
         <img src="assets/cups/strawberry.webp" alt="" loading="lazy">
         <img src="assets/cups/choco.webp" alt="" loading="lazy">
@@ -180,11 +180,11 @@
     </div>
     <div class="reveal">
       <ol class="timeline">
-        <li class="tl"><span class="tl-tag">2021</span><p data-i18n="story.s1">Back in 2021, with a little more time on our hands and a big craving for something new, KONU was born. What began as a fun kitchen experiment quickly turned into a passion project fueled by creativity, curiosity, and crunch.</p></li>
-        <li class="tl"><span class="tl-tag" data-i18n="story.t2">Today</span><p data-i18n="story.s2">With the help of family and friends, we turned that dream into reality — and today, KONU is proudly found in over 400 stores across the Philippines and on shelves in major supermarkets in Canada.</p></li>
-        <li class="tl"><span class="tl-tag" data-i18n="story.t3">Every bite</span><p data-i18n="story.s3">From our first snack to our ever-growing lineup, every KONU product is made with one mission in mind: to bring happiness in every bite and keep the joy of snacking alive.</p></li>
+        <li class="tl"><span class="tl-tag">2021</span><p data-i18n="story.s1">Konu began in 2021 as a fun kitchen experiment, then grew into a passion project fueled by creativity, curiosity and crunch.</p></li>
+        <li class="tl"><span class="tl-tag" data-i18n="story.t2">Today</span><p data-i18n="story.s2">With help from family and friends, that experiment became a brand. Konu says its snacks are now in over 400 stores across the Philippines and in major supermarkets in Canada.</p></li>
+        <li class="tl"><span class="tl-tag" data-i18n="story.t3">Every bite</span><p data-i18n="story.s3">Konu describes one mission behind its growing lineup: bring happiness in every bite and keep the joy of snacking alive.</p></li>
       </ol>
-      <a class="btn btn--accent story-btn" href="#flavors" data-i18n="story.shop">Shop Konu</a>
+      <a class="btn btn--accent story-btn" href="#flavors" data-i18n="story.shop">See the flavors</a>
     </div>
   </div>
 </section>
@@ -197,9 +197,9 @@
     <div class="section-head reveal">
       <div>
         <p class="kicker" data-i18n="st.kicker">Konu around the world</p>
-        <h2 id="stats-title" data-i18n-html="st.title">Snackin' our way<br>around the globe</h2>
+        <h2 id="stats-title" data-i18n-html="st.title">Snackin' around<br>the globe</h2>
       </div>
-      <p data-i18n="st.lead">From one little jar to snack shelves everywhere. Thanks for crunching with us.</p>
+      <p data-i18n="st.lead">From one little jar to snack shelves abroad. These figures come from Konu.</p>
     </div>
     <ul class="stat-grid">
       <li class="stat reveal" style="--a:#9fa8e0"><span class="stat-num" data-to="4.5" data-dec="1" data-suffix="M">4.5M</span><span class="stat-label" data-i18n="st.l1">Jars sold globally</span></li>
@@ -216,9 +216,9 @@
     <div class="cups-row reveal" id="cupsRow" aria-hidden="true"></div>
     <div class="reveal">
       <h2 id="order-title" data-i18n-html="ord.title">Grab a cup.<br>Or all five.</h2>
-      <p data-i18n="ord.lead">Mini Krunch solo cups are ready to snack. Order online or find us at your favorite store.</p>
+      <p data-i18n="ord.lead">Look for Mini Krunch online or at a store near you.</p>
       <div class="buttons">
-        <a class="btn btn--accent" href="#flavors" data-i18n="ord.shop">Shop flavors</a>
+        <a class="btn btn--accent" href="#flavors" data-i18n="ord.shop">See the flavors</a>
         <a class="btn btn--secondary" href="stores.html" data-i18n="ord.buy">Find a store</a>
       </div>
       <div class="order-stores">
@@ -233,40 +233,22 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <p class="kicker" data-i18n="ct.kicker">Contact information</p>
-        <h2 id="contact-title" data-i18n="ct.title">Let's talk krunch</h2>
+        <p class="kicker" data-i18n="ct.kicker">About this concept</p>
+        <h2 id="contact-title" data-i18n="ct.title">Looking for Konu?</h2>
       </div>
-      <p data-i18n="ct.lead">Questions, orders or partnerships, we'd love to hear from you.</p>
+      <p data-i18n="ct.lead">This site can't answer questions or take orders. For anything about the snacks, go to Konu's official pages.</p>
     </div>
     <div class="contact-grid">
-      <div class="ccard address reveal">
-        <div class="ficon" style="--t:var(--konu-yellow)"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
-        <small data-i18n="ct.addr">Address</small>
-        <strong>888 Industrial Megacity, Phase 2, Highway 2000, Santa Ana, 1920 Taytay, Rizal, Philippines</strong>
-        <iframe class="ccard-map" src="https://www.google.com/maps?q=888%20Industrial%20Megacity%2C%20Phase%202%2C%20Highway%202000%2C%20Santa%20Ana%2C%201920%20Taytay%2C%20Rizal%2C%20Philippines&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Konu in Taytay, Rizal" data-i18n-title="ct.mapTitle"></iframe>
-        <a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=888%20Industrial%20Megacity%2C%20Phase%202%2C%20Highway%202000%2C%20Santa%20Ana%2C%201920%20Taytay%2C%20Rizal%2C%20Philippines" target="_blank" rel="noopener"><span data-i18n="ct.map">Open in Maps</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="ccard about reveal">
+        <div class="ficon" style="--t:var(--konu-yellow)"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20ZM14 7l3 3"/></svg></div>
+        <small data-i18n="ct.proj">The project</small>
+        <strong data-i18n="ct.made">Designed by Tinapay as a portfolio concept</strong>
+        <p data-i18n="ct.rights">Konu owns the Mini Krunch name, packaging and product photos. Prices here are samples.</p>
+        <a class="go" href="https://tinapaaay.github.io/Personal-Portfolio/" target="_blank" rel="noopener"><span data-i18n="ct.port">See Tinapay's portfolio</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <a class="ccard reveal" href="mailto:talktokonu@konufoods.com" style="animation-delay:80ms">
-        <div class="ficon" style="--t:var(--lilac-200)"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></div>
-        <small data-i18n="ct.inq">Inquiries, assistance &amp; concerns</small>
-        <strong>talktokonu@konufoods.com</strong>
-        <span class="go"><span data-i18n="ct.mail">Send an email</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="ccard reveal" href="mailto:sales@konufoods.com" style="animation-delay:160ms">
-        <div class="ficon" style="--t:#fde9bf"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></div>
-        <small data-i18n="ct.part">Partnership inquiries</small>
-        <strong>sales@konufoods.com</strong>
-        <span class="go"><span data-i18n="ct.mail">Send an email</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <div class="ccard wide phone-card reveal" style="animation-delay:240ms">
-        <div class="phone-main">
-          <div class="ficon" style="--t:#f4e2d6"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></div>
-          <small data-i18n="ct.land">Landline · Cereal Line</small>
-          <strong><a href="tel:+63282543561">(02) 8254-3561</a></strong>
-          <a class="go" href="tel:+63282543561"><span data-i18n="ct.call">Call us</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
+      <div class="ccard wide konu-card reveal" style="animation-delay:80ms">
+        <small data-i18n="ct.official">Konu's official pages</small>
         <div class="socials">
-          <small data-i18n="ct.follow">Follow us</small>
           <a class="social" href="https://www.instagram.com/konu.snacks/" target="_blank" rel="noopener"><span class="social-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></span><span><b>Instagram</b>@konu.snacks</span></a>
           <a class="social" href="https://www.tiktok.com/@konu.snacks" target="_blank" rel="noopener"><span class="social-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3.5c.4 2.9 2.4 4.7 5.2 4.9"/></svg></span><span><b>TikTok</b>@konu.snacks</span></a>
           <a class="social" href="https://www.facebook.com/konufood" target="_blank" rel="noopener"><span class="social-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 21v-7.5h2.8l.5-3.3h-3.3V8.3c0-1 .4-1.8 1.9-1.8h1.5V3.6a19 19 0 0 0-2.3-.1c-2.6 0-4.1 1.5-4.1 4.3v2.4H8.7v3.3h2.8V21"/></svg></span><span><b>Facebook</b>/konufood</span></a>
@@ -282,24 +264,23 @@
   <div class="wrap">
     <div class="fwrap">
       <div>
-        <a class="logo" href="#card">Konu</a>
-        <p class="tag" data-i18n="ft.tag">Mini Krunch cereal cups, made for snacking anywhere.</p>
-        <p class="tag"><a href="mailto:talktokonu@konufoods.com">talktokonu@konufoods.com</a><br><a href="tel:+63282543561">(02) 8254-3561</a></p>
+        <a class="logo" href="#card">Mini Krunch</a>
+        <p class="tag" data-i18n="ft.tag">An unofficial website concept for Konu's Mini Krunch cereal cups.</p>
       </div>
       <div>
-        <h4 data-i18n="ft.shop">Shop</h4>
+        <h4 data-i18n="ft.shop">Browse</h4>
         <ul><li><a href="#flavors" data-i18n="hero.all">All flavors</a></li><li><a href="#why" data-i18n="ft.solo">Solo cups</a></li><li><a href="stores.html" data-i18n="nav.buy">Where to buy</a></li></ul>
       </div>
       <div>
-        <h4 data-i18n="ft.company">Company</h4>
-        <ul><li><a href="#story" data-i18n="ft.story">Our story</a></li><li><a href="#contact" data-i18n="ft.contact">Contact</a></li></ul>
+        <h4 data-i18n="ft.company">About</h4>
+        <ul><li><a href="#story" data-i18n="ft.story">The story</a></li><li><a href="#contact" data-i18n="ft.contact">About this concept</a></li></ul>
       </div>
       <div>
-        <h4 data-i18n="ft.follow">Follow</h4>
+        <h4 data-i18n="ft.follow">Konu online</h4>
         <ul><li><a href="https://www.instagram.com/konu.snacks/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@konu.snacks" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.facebook.com/konufood" target="_blank" rel="noopener">Facebook</a></li></ul>
       </div>
     </div>
-    <div class="fbottom"><span>Unofficial concept by Tinapay. Konu and Mini Krunch belong to their owners.</span><span data-i18n="hero.eyebrow">Mini Krunch · Solo Cup</span></div>
+    <div class="fbottom"><span data-i18n="ft.note">Unofficial concept by Tinapay. Konu and Mini Krunch belong to their owners.</span><span data-i18n="hero.eyebrow">Mini Krunch · Solo Cup</span></div>
   </div>
 </footer>
 
@@ -317,8 +298,8 @@
     <a class="btn btn--primary" href="#flavors" id="browseFlavors" data-i18n="cart.browse">Browse flavors</a>
   </div>
   <div class="cart-foot" id="cartFoot">
-    <div class="cart-row"><span data-i18n="cart.sub">Subtotal</span><strong id="cartSubtotal">$0</strong></div>
-    <p class="cart-note" data-i18n="cart.note">Your picks are saved here as a list. Find them on your favorite shop:</p>
+    <div class="cart-row"><span data-i18n="cart.sub">Sample subtotal</span><strong id="cartSubtotal">$0</strong></div>
+    <p class="cart-note" data-i18n="cart.note">This concept doesn't sell anything. Your list stays in this browser. Look for these items on:</p>
     <div class="shop-links" id="shopLinks"></div>
     <a class="store-link" href="stores.html" data-i18n="cart.stores">Or find Mini Krunch in a store near you →</a>
     <button class="remove clear" id="clearCart" data-i18n="cart.clear">Clear cart</button>
@@ -329,7 +310,7 @@
 <div class="toast" id="toast" role="status"><span id="toastText"></span><button id="toastView" data-i18n="cart.view">View cart</button></div>
 
 <script src="assets/stores.js"></script>
-<script src="assets/site.js?v=8"></script>
+<script src="assets/site.js?v=9"></script>
 <script>
   // Edit flavors, colors, prices and copy here.
   const flavors = [
