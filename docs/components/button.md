@@ -12,16 +12,16 @@ Don't use it for text links inside paragraphs, the header icons (sound, cart, la
 
 | Variant | Class | Looks like | Use when | Example on the site |
 |---|---|---|---|---|
-| Primary | `btn btn--primary` | Filled brown, cream text. Turns purple on hover. | The main action in a section. One per section. | Best seller "Add to cart", cart "Browse flavors" |
-| Secondary | `btn btn--secondary` | Brown outline, transparent. Fills brown on hover. | A second action next to a primary or accent one. | Hero "All flavors", "Show more stores" |
-| Accent | `btn btn--accent` | Filled Konu yellow, brown text. Turns white on hover. | The main action on a dark background (brown or purple). | "Shop Konu" in Our Story, "Shop flavors" in the purple band |
-| Icon | `btn btn--icon` | Round, outline, icon only. Fills on hover. | A familiar action that an icon shows clearly. Always add an `aria-label`. | Slider arrows, close cart |
+| Primary | `btn btn--primary` | Filled brown, cream text. Turns purple on hover. | The main action in a section. One per section. | Shelf and best seller "Add to cart", cart "Browse flavors" |
+| Secondary | `btn btn--secondary` | Brown outline, transparent. Fills brown on hover. | A second action next to a primary or accent one. | "Show more stores" |
+| Accent | `btn btn--accent` | Filled Konu yellow, brown text. Turns white on hover. | The main action on a dark background (brown or purple). | "Find a store" in the purple reach section |
+| Icon | `btn btn--icon` | Round, outline, icon only. Fills on hover. | A familiar action that an icon shows clearly. Always add an `aria-label`. | Shelf arrows, close cart |
 
 ### Sizes
 
 | Class | Size | Use for |
 |---|---|---|
-| `btn--sm` | 12px text, about 42px tall (40px on phones). Icon: 36px circle, 40px on phones. | The hero, where buttons sit beside the big product photo |
+| `btn--sm` | 12px text, about 42px tall (40px on phones). Icon: 36px circle, 40px on phones. | Compact icon controls such as shelf arrows |
 | *(none)* | 13px text, about 47px tall. Icon: 40px circle. | Everywhere else |
 | `btn--lg` | 15px bold text, about 53px tall | A single standout action, like the best seller |
 | `btn--block` | Full width of its container | Stacked choices in narrow spaces, like the shop buttons in the cart |
@@ -49,11 +49,9 @@ The button is plain HTML and CSS, so its "props" are classes, attributes and CSS
 Don't write a new button style for a new background. Set the variables on the buttons in that section instead:
 
 ```css
-/* hero: buttons follow the current flavor's colors */
-.card .btn:not(.btn--accent) { --btn-main: var(--ink); --btn-on-main: var(--bg); --btn-main-hover: var(--ink); }
+/* flavor shelves: buttons follow each flavor's colors */
+.shelf .btn { --btn-main: var(--ink); --btn-on-main: var(--bg); --btn-main-hover: var(--ink); }
 
-/* purple band: white outline that fills white with purple text */
-.order .btn--secondary { --btn-main: var(--white); --btn-on-main: var(--konu-purple); }
 ```
 
 Set them on the `.btn` elements, not on the section itself, because `.btn` sets its own defaults.
@@ -75,7 +73,7 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
 - **Role:** a `<button>` is announced as "button"; an `<a href>` as "link". Pick the element by what it does, not how it looks: actions on this page are `<button>`, going somewhere is `<a>`.
 - **Keyboard:** Tab moves to the button and shows the focus outline. Enter activates both buttons and links. Space activates `<button>` only.
 - **Screen reader:** reads the visible text, or the `aria-label` on icon buttons. In Korean, labels switch through `data-i18n` (text) and `data-i18n-aria` (icon labels).
-- **Contrast:** every variant passes 4.5:1 on its own background: primary 13.1:1, primary hover 8.8:1, secondary on cream 13.1:1, accent 8.8:1, white outline on the purple band 9.4:1. Shop buttons: Shopee (`#d23c1e`, a slightly deeper Shopee orange) 4.8:1, Lazada 15.7:1, TikTok 18.9:1.
+- **Contrast:** every variant passes 4.5:1 on its own background: primary 13.1:1, primary hover 8.8:1, secondary on cream 13.1:1, accent 8.8:1, accent on the purple reach section 8.8:1. Shop buttons: Shopee (`#d23c1e`, a slightly deeper Shopee orange) 4.8:1, Lazada 15.7:1, TikTok 18.9:1.
 - **Tap size:** every button is at least 40px tall on phones.
 - **Motion:** respects the "reduce motion" setting.
 - **Disabled links:** `aria-disabled="true"` blocks both clicks and the Enter key.
@@ -101,7 +99,7 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
 <a class="btn btn--secondary" href="stores.html">Find a store</a>
 
 <!-- on a dark (brown or purple) background -->
-<a class="btn btn--accent" href="#flavors">Shop flavors</a>
+<a class="btn btn--accent" href="stores.html">Find a store</a>
 
 <!-- icon only: label is required -->
 <button class="btn btn--icon btn--sm" id="next" aria-label="Next flavor" data-i18n-aria="aria.next">
@@ -126,4 +124,4 @@ Set them on the `.btn` elements, not on the section itself, because `.btn` sets 
   - reduce-motion support;
   - the Enter key is blocked on disabled links;
   - new `btn--loading` state;
-  - 40px hero arrows on phones.
+  - 40px icon arrows on phones.

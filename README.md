@@ -4,13 +4,13 @@ An unofficial portfolio concept by Tinapay for Konu's Mini Krunch solo cups and 
 
 ## Pages
 
-- `index.html`: home page with the flavor slider, flavor cards, best seller, Our Story, stats, cart and contact.
+- `index.html`: home page with the flavor aisle, best seller, solo cup details, Konu story, reach, cart and project note.
 - `stores.html`: store finder for the Philippines and Canada.
 - `404.html`: friendly "page not found" page (GitHub Pages uses it automatically).
 
 ## Features
 
-- Full-screen flavor slider (arrows, swipe or keyboard)
+- Full-height flavor aisle (click, tap, arrows, swipe or keyboard)
 - Cart with quantities, saved in the browser, with "Look on Shopee / Lazada / TikTok" buttons
 - Add-to-cart animation and sounds (with a mute button)
 - English and Korean

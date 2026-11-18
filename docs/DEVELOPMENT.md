@@ -27,7 +27,7 @@ Colors, type, spacing, shapes, motion, components and patterns are documented in
 
 No automated test command is provided by this repository. The following manual checks are a checklist, not a claim that browser QA has been completed.
 
-1. Cycle the hero with arrows, keyboard, and swipe; add/remove items and change quantities, then refresh.
+1. Open every flavor shelf with click or tap, arrows, keyboard, and swipe; add/remove items and change quantities, then refresh.
 2. Switch English/Korean and PHP/CAD/KRW; check labels, prices, and narrow-screen layout.
 3. Filter stores by available location controls, check empty results and map links, and inspect marketplace destinations.
 4. Open `404.html` directly and check the home link; verify share-image URLs against the final host.

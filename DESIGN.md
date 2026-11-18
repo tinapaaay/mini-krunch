@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Mini Krunch concept
-description: An unofficial portfolio website concept for Konu's Mini Krunch cereal cups, where each flavor floods the first screen with its own color.
+description: An unofficial portfolio website concept for Konu's Mini Krunch cereal cups, built like a snack aisle of full-height flavor shelves.
 
 colors:
   primary: "#77197E"
@@ -32,23 +32,26 @@ colors:
   shop-tiktok: "#111111"
 
 typography:
+  poster:
+    fontFamily: Bagel Fat One
+    fontSize: 124px
+    fontWeight: 400
+    lineHeight: 0.94
   display-xl:
     fontFamily: Bagel Fat One
     fontSize: 72px
     fontWeight: 400
-    lineHeight: 1.05
+    lineHeight: 1
   display-lg:
     fontFamily: Bagel Fat One
     fontSize: 56px
     fontWeight: 400
     lineHeight: 1.12
-  stat:
-    fontFamily: Montserrat
-    fontSize: 72px
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: -0.03em
-    fontFeature: "'tnum' 1"
+  display-sm:
+    fontFamily: Bagel Fat One
+    fontSize: 22px
+    fontWeight: 400
+    lineHeight: 1.2
   title-lg:
     fontFamily: Montserrat
     fontSize: 28px
@@ -79,7 +82,6 @@ typography:
     fontSize: 12px
     fontWeight: 600
     lineHeight: 1.4
-    letterSpacing: 0.22em
   button-sm:
     fontFamily: Montserrat
     fontSize: 12px
@@ -129,18 +131,26 @@ components:
     backgroundColor: "{colors.on-surface}"
     textColor: "{colors.on-brown-soft}"
     typography: "{typography.body-lg}"
-  section-stats:
+  section-crunch:
     backgroundColor: "{colors.secondary}"
     textColor: "{colors.on-surface}"
-  stat-number:
-    backgroundColor: "{colors.secondary}"
+    typography: "{typography.poster}"
+  story-close:
+    backgroundColor: "{colors.on-surface}"
+    textColor: "{colors.secondary}"
+    typography: "{typography.poster}"
+  solo-note:
+    backgroundColor: "{colors.surface}"
     textColor: "{colors.on-surface}"
-    typography: "{typography.stat}"
-  section-order:
+    typography: "{typography.display-sm}"
+  section-reach:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
-    typography: "{typography.display-xl}"
     padding: "{spacing.section-max}"
+  stat-number:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.secondary}"
+    typography: "{typography.display-xl}"
   store-page:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.on-surface}"
@@ -229,23 +239,23 @@ components:
     textColor: "{colors.on-primary}"
     typography: "{typography.body-md}"
     rounded: "{rounded.full}"
-  flavor-card-cookies:
+  shelf-cookies:
     backgroundColor: "{colors.flavor-cookies}"
     textColor: "{colors.navy}"
     rounded: "{rounded.lg}"
-  flavor-card-strawberry:
+  shelf-strawberry:
     backgroundColor: "{colors.flavor-strawberry}"
     textColor: "{colors.on-flavor-strawberry}"
     rounded: "{rounded.lg}"
-  flavor-card-matcha:
+  shelf-matcha:
     backgroundColor: "{colors.flavor-matcha}"
     textColor: "{colors.on-primary}"
     rounded: "{rounded.lg}"
-  flavor-card-choco:
+  shelf-choco:
     backgroundColor: "{colors.primary-soft}"
     textColor: "{colors.on-primary}"
     rounded: "{rounded.lg}"
-  flavor-card-pistachio:
+  shelf-pistachio:
     backgroundColor: "{colors.flavor-pistachio}"
     textColor: "{colors.on-flavor-pistachio}"
     rounded: "{rounded.lg}"
@@ -265,15 +275,15 @@ components:
 
 ## Overview
 
-**Direction: Flavor Flood.** The first screen gives one flavor the entire window, then changes everything when you change the cup. The packaging supplies the personality, so the interface stays simple around it. The trade-off is subtlety: this system chooses loud, saturated color blocks over quiet editorial restraint.
+**Direction: Flavor Aisle.** The home page opens like a snack aisle: five full-height color shelves, with one flavor pulled forward. The packaging supplies the personality, while the page uses large color fields and oversized Bagel Fat One type instead of repeating cards. The trade-off is quiet symmetry. This system accepts bold, uneven compositions so it feels specific to a snack brand.
 
-This file records the site as built. Tokens in the YAML are the rules. `assets/site.css` exposes them as CSS custom properties, which are named values reused across the code (a **design token** in code form).
+Tokens in the YAML are the rules. `assets/site.css` exposes them as CSS custom properties, which are reusable named values in the code.
 
 Five ideas guide decisions:
 
-1. **The product leads.** A cup or jar is the largest thing in a product section.
-2. **One flavor, one color.** The hero reads `--bg`, `--ink` and `--muted` from the current flavor, so anything inside it recolors together.
-3. **Konu's colors everywhere else.** Purple, yellow and brown carry the page after the hero.
+1. **The shelf is the signature.** Choosing a flavor is the main interaction, so it gets the strongest motion and most screen space.
+2. **The product leads.** A cup or jar is the largest image in a product section.
+3. **Each section gets one idea.** Use one strong composition instead of a label, heading, paragraph and card grid every time.
 4. **Playful does not excuse hard reading.** Text keeps a 4.5:1 **contrast ratio**, the measured difference between text and background.
 5. **Two languages are normal.** English and Korean must both fit, so layouts cannot depend on exact text length.
 
@@ -293,9 +303,9 @@ Purple `primary`, yellow `secondary` and brown `on-surface` are the Konu brand c
 
 | YAML token | CSS variable | Job |
 |---|---|---|
-| `primary` | `--konu-purple` | Marquee, order band, footer, badges, section labels |
-| `primary-soft` | `--konu-purple-soft` | Choco Crunch and the stats hill |
-| `secondary` | `--konu-yellow` | Stats section and the accent button on dark color |
+| `primary` | `--konu-purple` | Header, reach section, footer, badges |
+| `primary-soft` | `--konu-purple-soft` | Choco Crunch shelf |
+| `secondary` | `--konu-yellow` | Crunch section, big numbers and accents on dark color |
 | `on-surface` | `--konu-brown` | Main text, Our Story, primary buttons |
 | `surface` | `--cream` | Default section background |
 | `surface-raised` | `--white` | Cards and the best seller section |
@@ -320,25 +330,25 @@ Use `rgba(var(--brown-rgb), .1)` for see-through borders and shadows. The matchi
 
 Flavor values live in the `flavors` list in `index.html`. New flavors must pass 4.5:1 for both their title color and softer description color.
 
-Store-chain dots and stat dots use flavor-family accents stored with their data. They are decorative and must never be the only way to understand something.
+Store-chain dots on the store page use accents stored with their data. They are decorative and must never be the only way to understand something.
 
 ## Typography
 
-**Bagel Fat One** does the talking: logo, hero title, section headings and timeline tags. It has one weight, so never fake bold. **Montserrat** handles reading and controls. **Noto Sans KR** follows both in every font stack so Korean text has a matching fallback.
+**Bagel Fat One** does the talking: logo, shelf names, shelf titles, section headings, big numbers and the poster-size moments. It has one weight, so never fake bold. **Montserrat** handles reading and controls. **Noto Sans KR** follows both in every font stack so Korean text has a matching fallback.
 
-The CSS scale is `--fs-label` 12px, `--fs-sm` 13px, `--fs-body` 15px, `--fs-lg` 17px, `--fs-xl` 22px, `--fs-2xl` 22 to 28px, `--fs-display` 32 to 56px and `--fs-hero` 40 to 72px. The YAML lists each fluid size at its largest value. A **type scale** is a short set of agreed sizes, which is why similar content looks related.
+The CSS scale is `--fs-label` 12px, `--fs-sm` 13px, `--fs-body` 15px, `--fs-lg` 17px, `--fs-xl` 22px, `--fs-2xl` 22 to 28px, `--fs-display` 32 to 56px, `--fs-hero` 40 to 72px and `--fs-poster` 56 to 124px. The YAML lists each fluid size at its largest value. A **type scale** is a short set of agreed sizes, which makes related content look related.
 
-Paragraphs stay near 520px wide or less. Uppercase labels use 0.22em tracking in English and 0.04em in Korean.
+Use poster type once per section at most. Paragraphs stay near 520px wide or less. Use sentence case for labels; the logo is the only uppercase brand text.
 
 ## Layout
 
-Content sits in a centered 1240px `.wrap`, with 6% side gutters. Sections use `clamp(72px, 10vw, 120px)` top and bottom. Section headers stack label, heading and intro on the left, followed by 48px of space.
+Content sits in a centered 1240px `.wrap`, with 6% side gutters. Sections use `clamp(72px, 10vw, 120px)` top and bottom. The aisle fills the first screen on desktop. Other sections choose a composition that suits their content.
 
 | Breakpoint | Rule | Main change |
 |---|---|---|
-| Phone | `max-width: 680px` | Hero stacks; flavors use two columns; other grids use one |
-| Tablet | `max-width: 900px` | Header links hide; best seller, story and stats simplify |
-| Laptop | `max-width: 1100px` | Flavors use three columns; about and store grids use two |
+| Phone | `max-width: 680px` | Header tightens and other grids use one column |
+| Tablet | `max-width: 900px` | Shelves stack as an accordion; crunch, solo cup, story and reach simplify |
+| Laptop | `max-width: 1100px` | About and store grids use two columns |
 
 CSS media queries cannot read custom properties, so these numbers must be typed exactly.
 
@@ -348,20 +358,21 @@ Depth stays warm because shadows use brand brown rather than neutral black.
 
 - `--shadow-sm`: sticky bars.
 - `--shadow-md`: floating cart and toast.
-- `--shadow-lg`: menus, cart drawer and hovered flavor cards.
+- `--shadow-lg`: menus and cart drawer.
 - Product photos use `filter: drop-shadow()` so the shadow follows the cup outline.
-- Timeline and stat rings are outlines, not elevation.
 
 ## Shapes
 
-Use `rounded.lg` for cards, `rounded.md` for menus and image tiles, `rounded.sm` for small rows and icons, and `rounded.full` for pills and circles. The hero floor shadow and stats hill keep `border-radius: 50%` because they are ovals.
+Use `rounded.lg` for cards, `rounded.md` for menus and image tiles, `rounded.sm` for small rows and icons, and `rounded.full` for pills and circles. Shelves and major section bands stay square so their colors meet edge to edge.
 
 ## Components
 
 The site has one button system: `.btn` with `--primary`, `--secondary`, `--accent` or `--icon`, plus `--sm`, `--lg`, `--block` and `--loading`. Its full reference is [docs/components/button.md](docs/components/button.md).
 
-- **Flavor card (`.fcard`)**: flavor background, tilted cup, name, sample price and add button.
-- **Feature card (`.feature`)**: white card with a tinted icon tile.
+- **Flavor shelf (`.shelf`)**: a button-controlled accordion. Closed shelves show a vertical name and small cup; the open shelf shows a large cup, title, sample price and Add to cart. On tablets and phones, shelves stack.
+- **Crunch feature (`.crunch`)**: yellow section with poster type and a jar cropped by the section edge.
+- **Solo map (`.solo-map`)**: one cup with three connected notes.
+- **Reach (`.reach`)**: Bagel number row followed by store chains and one store action.
 - **About card (`.ccard.about`)**: brown credit card explaining who made the concept.
 - **Konu links (`.konu-card`)**: official social links.
 - **Chip (`.chip`)**: pill with a colored dot; selected store filters use `aria-pressed`.
@@ -370,25 +381,26 @@ The site has one button system: `.btn` with `--primary`, `--secondary`, `--accen
 
 ### Motion
 
-`--ease` handles slides and color changes. `--ease-bounce` handles small pops. The flavor change is the signature motion; cart feedback answers a person's action. Every animation needs a `prefers-reduced-motion` fallback. Scroll reveals hide content only after the page script has added the `js` class.
+`--ease` handles shelf changes. `--ease-bounce` handles small pops. Cups rise once when the aisle loads, and opening a shelf is the signature motion. Cart feedback answers a person's action. Sections do not fade in on scroll, and there is no autoplaying marquee. Every animation needs a `prefers-reduced-motion` fallback.
 
 ### Imagery
 
-Use transparent WebP product cutouts around 600px wide unless a larger crop is needed. Keep icons simple with round caps. The share image is `assets/og-image.jpg` at 1200 by 630 and must identify the site as an unofficial concept.
+Use transparent WebP product cutouts around 600px wide. The current jar source is 742px wide, so do not stretch it into a full-width texture. Keep icons simple with round caps. The share image is `assets/og-image.jpg` at 1200 by 630 and must identify the site as an unofficial concept.
 
 ### Known gaps
 
-- `.best p`, `.stats .section-head p` and the jar glow still use one-off colors.
 - Product drop shadows are not tokenized.
 - Spacing tokens describe the page structure, but component padding is still local.
-- The site repeats uppercase labels, reveal animations and card grids more than the direction needs. Reduce these in the redesign.
+- A true full-bleed cereal texture needs a photo at least 1600px wide. A real spoon photo would strengthen the solo cup section.
 - "Over 400 stores", "12k locations" and the 258 listed stores have not been reconciled.
 
 ## Do's and Don'ts
 
-- Do let one flavor color own the full hero. Don't add a competing background shape behind it.
+- Do keep exactly one shelf open. Don't add a second competing action inside the aisle.
 - Do reuse a token before adding a value. If a new value is truly needed, update this file in the same change.
 - Do use the accent button only on brown or purple. Don't use it as a general highlight on cream.
+- Do spend poster type on one idea per section. Don't turn every heading into a poster.
+- Don't bring back scroll fade-ins, marquees or repeated icon-card grids without a specific reason.
 - Do keep one primary or accent action per section.
 - Do show prices as samples. Don't write "buy", "checkout" or "order here".
 - Do write about Konu in the third person. Don't use "our story" or "contact us".
